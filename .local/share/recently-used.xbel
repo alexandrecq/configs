@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/alex/data/out/tika/renderer-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-05-04T23:57:45Z" modified="2018-07-09T23:23:47Z" visited="2018-05-04T23:57:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T23:23:47Z" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/calibration_targets/PNG_targets_49in_resized/CIRCLE_GRID_42.7in_24.02in_4cm_24x10-1.png" added="2018-06-25T22:29:53Z" modified="2018-06-25T22:29:53Z" visited="2018-06-25T22:29:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-06-25T22:29:53Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Radiant_Calibration_TEST/Extrisincs_RPE.png" added="2018-06-26T19:05:15Z" modified="2018-06-26T19:05:15Z" visited="2018-06-26T19:05:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-06-26T19:05:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Radiant_Calibration_TEST/iframes/01x01/clip000_frame240.png" added="2018-06-26T21:04:32Z" modified="2018-06-26T21:04:32Z" visited="2018-06-26T21:04:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-06-26T21:04:32Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Radiant_Calibration_TEST/calibration_intrinsic/00x01/undistort_images/00004.png" added="2018-06-26T23:32:31Z" modified="2018-06-26T23:32:31Z" visited="2018-06-26T23:32:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-06-26T23:32:31Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Radiant_Calibration_TEST/iframes/00x00/clip023_frame360.png" added="2018-06-29T17:04:24Z" modified="2018-06-29T17:04:24Z" visited="2018-06-29T17:04:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-06-29T17:04:24Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic/undistort_images/00510.png" added="2018-07-03T17:03:32Z" modified="2018-07-03T17:13:34Z" visited="2018-07-03T17:03:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-03T17:13:34Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic/calib_images/00480.png" added="2018-07-03T17:10:31Z" modified="2018-07-03T17:10:31Z" visited="2018-07-03T17:10:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-03T17:10:31Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic/calib_images/00000.png" added="2018-07-03T17:26:20Z" modified="2018-07-03T17:26:20Z" visited="2018-07-03T17:26:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-03T17:26:20Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic/undistort_images/00000.png" added="2018-07-03T17:28:19Z" modified="2018-07-03T17:28:19Z" visited="2018-07-03T17:28:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-03T17:28:19Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/iframes/02x00/clip000_frame870.png" added="2018-07-03T23:05:52Z" modified="2018-07-03T23:05:52Z" visited="2018-07-03T23:05:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-03T23:05:52Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/iframes/03x02/clip026_frame510.png" added="2018-07-05T18:16:10Z" modified="2018-07-05T18:16:10Z" visited="2018-07-05T18:16:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-05T18:16:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Radiant_Calibration_TEST/iframes/00x02/clip021_frame270.png" added="2018-07-05T18:40:15Z" modified="2018-07-05T18:40:15Z" visited="2018-07-05T18:40:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-05T18:40:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/RPEs.png" added="2018-07-05T19:21:54Z" modified="2018-07-09T18:53:34Z" visited="2018-07-05T19:21:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T18:53:34Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/Camera_array.png" added="2018-07-05T19:22:02Z" modified="2018-07-05T19:22:02Z" visited="2018-07-05T19:22:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-05T19:22:02Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/img_uv_(2,%205)_(2,%204).png" added="2018-07-05T23:50:55Z" modified="2018-07-05T23:50:55Z" visited="2018-07-05T23:50:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-05T23:50:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic_combined/00x00/undistort_images/00037.png" added="2018-07-09T18:25:09Z" modified="2018-07-09T18:25:09Z" visited="2018-07-09T18:25:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T18:25:09Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/Nicole_disparity.png" added="2018-07-09T18:53:11Z" modified="2018-07-09T18:53:11Z" visited="2018-07-09T18:53:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T18:53:11Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic_combined/00x06/calib_images/00010.png" added="2018-07-09T18:54:18Z" modified="2018-07-09T18:54:18Z" visited="2018-07-09T18:54:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T18:54:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/Sony_Stage_6-26-2018/calibration_intrinsic_combined/00x05/undistort_images/00035.png" added="2018-07-09T18:54:39Z" modified="2018-07-09T18:54:39Z" visited="2018-07-09T18:54:39Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T18:54:39Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/unreal_2048_2048_7_7_nominal/01x00.png" added="2018-07-09T20:13:51Z" modified="2018-07-09T20:13:51Z" visited="2018-07-09T20:13:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T20:13:51Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/in/fire_clip_25_frame_5386_color_corrected/Raster_imgs.png" added="2018-07-09T23:12:28Z" modified="2018-07-09T23:12:28Z" visited="2018-07-09T23:12:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T23:12:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/out/tika/renderer-point-cloud-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-09T23:31:28Z" modified="2018-07-09T23:31:28Z" visited="2018-07-09T23:31:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-09T23:31:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/26_5360/out_lf_x/out_lf_24.tiff" added="2018-07-11T22:15:43Z" modified="2018-07-11T22:15:43Z" visited="2018-07-11T22:15:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/tiff"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:15:43Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/26_5360/out_lf_x/out_lf_34.tiff" added="2018-07-11T22:15:51Z" modified="2018-07-11T22:15:51Z" visited="2018-07-11T22:15:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/tiff"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:15:51Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/25_5386_raw/out_lf_x/out_lf_04.png" added="2018-07-11T22:16:33Z" modified="2018-07-11T22:16:33Z" visited="2018-07-11T22:16:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:16:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/nicole_test/img_uv_remap.png" added="2018-07-11T22:17:46Z" modified="2018-07-11T22:17:46Z" visited="2018-07-11T22:17:47Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:17:46Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/tika/py_ibr_out/renderer-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-11T22:25:06Z" modified="2018-07-11T22:25:06Z" visited="2018-07-11T22:25:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:25:06Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/tika/py_ibr_out/renderer-point-cloud-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-11T22:25:10Z" modified="2018-07-11T22:25:10Z" visited="2018-07-11T22:25:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:25:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/depth/rgb/HighresScreenshot00048.png" added="2018-07-11T22:27:42Z" modified="2018-07-11T22:27:42Z" visited="2018-07-11T22:27:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:27:42Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/depth/bga/HighresScreenshot00095.png" added="2018-07-11T22:27:52Z" modified="2018-07-11T22:27:52Z" visited="2018-07-11T22:27:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:27:52Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/unreal_2048_2048_7_7_nominal/01x05.png" added="2018-07-11T22:28:01Z" modified="2018-07-11T22:28:01Z" visited="2018-07-11T22:28:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-11T22:28:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-256,256_14.0,14.0_2.5,2.5,0.0_0.0,-0.0,0.0.png" added="2018-07-11T23:13:50Z" modified="2018-07-12T00:35:14Z" visited="2018-07-11T23:13:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T00:35:14Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/tika/out_py_ibr/renderer-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-12T00:35:02Z" modified="2018-07-13T19:31:57Z" visited="2018-07-12T00:35:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-13T19:31:57Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/tika/out_py_ibr/renderer-point-cloud-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-12T16:39:59Z" modified="2018-07-12T16:39:59Z" visited="2018-07-12T16:39:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T16:39:59Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-256,256_90.0,90.0_2.5,2.5,0.0_0.0,-0.0,0.0.png" added="2018-07-12T17:27:29Z" modified="2018-07-12T17:27:29Z" visited="2018-07-12T17:27:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T17:27:29Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,0.0_0.0,-0.0,0.0.png" added="2018-07-12T19:00:00Z" modified="2018-07-16T18:55:52Z" visited="2018-07-12T19:00:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-16T18:55:52Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,0.0_0.1,0.1,0.1.png" added="2018-07-12T22:45:27Z" modified="2018-07-12T22:45:27Z" visited="2018-07-12T22:45:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T22:45:27Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,10.0_0.1,0.0,0.0.png" added="2018-07-12T22:46:48Z" modified="2018-07-12T22:46:48Z" visited="2018-07-12T22:46:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T22:46:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,100.0_0.1,0.0,0.0.png" added="2018-07-12T22:48:01Z" modified="2018-07-12T22:48:01Z" visited="2018-07-12T22:48:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T22:48:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/unreal_room/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,0.0_0.1,0.0,0.0.png" added="2018-07-12T22:48:41Z" modified="2018-07-13T16:31:33Z" visited="2018-07-12T22:48:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-13T16:31:33Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/fire_clip_25_frame_5386_color_corrected/best_respaced/out_lf_x/out_lf_00.jpg" added="2018-07-12T23:11:32Z" modified="2018-07-12T23:11:32Z" visited="2018-07-12T23:11:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-12T23:11:32Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/tika/out_py_ibr/renderer-540,960_54.0,84.0_20.0,20.0,0.0_0.0,-0.0,0.0.png" added="2018-07-13T00:18:30Z" modified="2018-07-13T19:34:12Z" visited="2018-07-13T00:18:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-13T19:34:12Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/fire_clip_25_frame_5386_color_corrected/source_tifs/00x00.tif" added="2018-07-13T00:30:37Z" modified="2018-07-13T00:30:37Z" visited="2018-07-13T00:30:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/tiff"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-13T00:30:37Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/alex/data/fire_clip_25_frame_5386_color_corrected/best_respaced/out_lf_x/out_lf_24.jpg" added="2018-07-13T18:01:35Z" modified="2018-07-13T18:01:35Z" visited="2018-07-13T18:01:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-13T18:01:35Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-512,512_90.0,90.0_2.5,2.5,0.0_0.0,-0.0,0.0.png" added="2018-07-16T23:43:09Z" modified="2018-07-16T23:43:09Z" visited="2018-07-16T23:43:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-16T23:43:09Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-512,512_90.0,90.0_0.0,0.0,0.0_0.0,-0.0,0.0.png" added="2018-07-16T23:45:23Z" modified="2018-07-16T23:45:23Z" visited="2018-07-16T23:45:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-16T23:45:23Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/camera(4,6).png" added="2018-07-16T23:47:01Z" modified="2018-07-16T23:47:01Z" visited="2018-07-16T23:47:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-16T23:47:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-point-cloud-512,512_90.0,90.0_0.0,0.0,0.0_0.0,-0.0,0.0.png" added="2018-07-16T23:55:29Z" modified="2018-07-17T00:04:46Z" visited="2018-07-16T23:55:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T00:04:46Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.0,0.0,0.0_0.0,-0.0,0.0.png" added="2018-07-17T00:05:40Z" modified="2018-07-18T22:16:55Z" visited="2018-07-17T00:05:40Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T22:16:55Z" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-point-cloud-540,960_40.0,66.0_0.0,0.0,0.0_0.0,-0.0,0.0.png" added="2018-07-17T00:06:06Z" modified="2018-07-17T00:06:06Z" visited="2018-07-17T00:06:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T00:06:06Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/test.png" added="2018-07-17T00:28:06Z" modified="2018-07-17T00:28:06Z" visited="2018-07-17T00:28:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T00:28:06Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.6,0.1,0.0_0.0,-0.0,0.0.png" added="2018-07-17T00:51:00Z" modified="2018-07-17T00:51:00Z" visited="2018-07-17T00:51:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T00:51:00Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.1,0.1,0.0_0.1,-0.0,0.0.png" added="2018-07-17T01:00:47Z" modified="2018-07-17T18:04:36Z" visited="2018-07-17T01:00:47Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T18:04:36Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.0,0.0,1.0_0.0,-0.0,0.0.png" added="2018-07-17T01:07:20Z" modified="2018-07-17T01:07:20Z" visited="2018-07-17T01:07:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T01:07:20Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/Nicole_disparity.png" added="2018-07-17T17:26:48Z" modified="2018-07-17T17:26:48Z" visited="2018-07-17T17:26:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T17:26:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/tika/out_py_ibr/renderer-540,960_54.0,84.0_20.0,20.0,80.0_0.4,-0.1,0.0.png" added="2018-07-17T17:28:50Z" modified="2018-07-17T17:31:08Z" visited="2018-07-17T17:28:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T17:31:08Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.5,0.4,0.0_0.2,-0.3,0.0.png" added="2018-07-17T18:21:05Z" modified="2018-07-17T18:21:05Z" visited="2018-07-17T18:21:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T18:21:05Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/renderer-540,960_40.0,66.0_0.6,0.5,0.0_0.2,-0.3,0.0.png" added="2018-07-17T22:34:10Z" modified="2018-07-17T22:34:10Z" visited="2018-07-17T22:34:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-17T22:34:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/undistort_images/00000.png" added="2018-07-18T17:52:07Z" modified="2018-07-18T17:52:07Z" visited="2018-07-18T17:52:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:52:07Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x00/undistort_images/00000.png" added="2018-07-18T17:54:56Z" modified="2018-07-18T20:24:54Z" visited="2018-07-18T17:54:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:24:54Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x01/undistort_images/00000.png" added="2018-07-18T17:55:03Z" modified="2018-07-18T17:55:03Z" visited="2018-07-18T17:55:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:55:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x01/calib_images/00000.png" added="2018-07-18T17:55:15Z" modified="2018-07-18T17:55:15Z" visited="2018-07-18T17:55:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:55:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x02/undistort_images/00000.png" added="2018-07-18T17:55:50Z" modified="2018-07-18T17:55:59Z" visited="2018-07-18T17:55:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:55:59Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x03/undistort_images/00000.png" added="2018-07-18T17:56:07Z" modified="2018-07-18T17:56:07Z" visited="2018-07-18T17:56:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:56:07Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x04/undistort_images/00000.png" added="2018-07-18T17:56:13Z" modified="2018-07-18T17:56:13Z" visited="2018-07-18T17:56:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:56:13Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x05/undistort_images/00000.png" added="2018-07-18T17:58:14Z" modified="2018-07-18T17:58:14Z" visited="2018-07-18T17:58:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:58:14Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x06/undistort_images/00000.png" added="2018-07-18T17:58:24Z" modified="2018-07-18T17:58:24Z" visited="2018-07-18T17:58:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:58:24Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/00x07/undistort_images/00000.png" added="2018-07-18T17:58:34Z" modified="2018-07-18T17:58:34Z" visited="2018-07-18T17:58:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T17:58:34Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/original-undist_(2,0).png" added="2018-07-18T19:15:38Z" modified="2018-07-18T19:15:38Z" visited="2018-07-18T19:15:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T19:15:38Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_nok3/02x00/undistort_images/00000.png" added="2018-07-18T20:14:12Z" modified="2018-07-18T20:14:12Z" visited="2018-07-18T20:14:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:14:12Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/00x00/undistort_images/00000.png" added="2018-07-18T20:24:33Z" modified="2018-07-18T20:24:33Z" visited="2018-07-18T20:24:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:24:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/01x01/undistort_images/00000.png" added="2018-07-18T20:29:13Z" modified="2018-07-18T20:29:13Z" visited="2018-07-18T20:29:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:29:13Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/01x01/undistort_images/00000.png" added="2018-07-18T20:29:24Z" modified="2018-07-18T20:29:24Z" visited="2018-07-18T20:29:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:29:24Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/01x01/calib_images/00000.png" added="2018-07-18T20:29:54Z" modified="2018-07-18T20:29:54Z" visited="2018-07-18T20:29:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T20:29:54Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/02x00/undistort_images/00000.png" added="2018-07-18T21:06:30Z" modified="2018-07-18T21:06:30Z" visited="2018-07-18T21:06:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T21:06:30Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/02x00/calib_images/00000.png" added="2018-07-18T21:07:03Z" modified="2018-07-18T21:07:03Z" visited="2018-07-18T21:07:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T21:07:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_combined/02x00/undistort_images/00000.png" added="2018-07-18T21:07:35Z" modified="2018-07-18T21:07:35Z" visited="2018-07-18T21:07:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-18T21:07:35Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/frame%7B%7D.png.png" added="2018-07-19T01:06:43Z" modified="2018-07-19T01:06:43Z" visited="2018-07-19T01:06:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-19T01:06:43Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/frame000.png" added="2018-07-19T01:12:52Z" modified="2018-07-19T01:12:52Z" visited="2018-07-19T01:12:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-19T01:12:52Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/frames/frame000.png" added="2018-07-19T01:23:30Z" modified="2018-07-20T16:49:46Z" visited="2018-07-19T01:23:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-20T16:49:46Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/frames/frame014.png" added="2018-07-19T20:18:25Z" modified="2018-07-19T20:18:25Z" visited="2018-07-19T20:18:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-19T20:18:25Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/frames_slant/frame005.png" added="2018-07-19T21:04:15Z" modified="2018-07-19T21:04:15Z" visited="2018-07-19T21:04:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-19T21:04:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/calibration_intrinsic_tworadialfull/03x00/undistort_images/00000.png" added="2018-07-23T22:00:33Z" modified="2018-07-23T22:00:33Z" visited="2018-07-23T22:00:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-23T22:00:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/calibration_intrinsic/03x07/undistort_images/00000.png" added="2018-07-24T01:12:34Z" modified="2018-07-24T01:12:34Z" visited="2018-07-24T01:12:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:12:34Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/calibration_intrinsic/02x08/undistort_images/00000.png" added="2018-07-24T01:12:55Z" modified="2018-07-24T01:12:55Z" visited="2018-07-24T01:12:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:12:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/calibration_intrinsic/04x07/undistort_images/00000.png" added="2018-07-24T01:14:14Z" modified="2018-07-24T01:14:14Z" visited="2018-07-24T01:14:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:14:14Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/calibration_intrinsic/03x03/undistort_images/00000.png" added="2018-07-24T01:14:36Z" modified="2018-07-24T01:14:36Z" visited="2018-07-24T01:14:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:14:36Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/frames/frame199.png" added="2018-07-24T01:16:18Z" modified="2018-07-24T01:16:18Z" visited="2018-07-24T01:16:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:16:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/calibration_intrinsic/01x00/undistort_images/00000.png" added="2018-07-24T01:20:28Z" modified="2018-07-24T01:20:28Z" visited="2018-07-24T01:20:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T01:20:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/figures/camera2,4_clip02_frame5160.png" added="2018-07-24T18:26:37Z" modified="2018-07-24T18:26:37Z" visited="2018-07-24T18:26:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T18:26:37Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-06-26_sony/out_py_ibr/frames/frame188.png" added="2018-07-24T23:03:29Z" modified="2018-07-24T23:03:29Z" visited="2018-07-24T23:03:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-24T23:03:29Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/out_py_ibr/renderer-1080,1920_40.0,66.0_0.1,0.1,0.0_0.0,0.1,-0.0.png" added="2018-07-25T22:08:48Z" modified="2018-07-25T22:08:48Z" visited="2018-07-25T22:08:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-25T22:08:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/out_py_ibr/frames/frame000.png" added="2018-07-26T00:13:22Z" modified="2018-07-26T00:19:17Z" visited="2018-07-26T00:13:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-26T00:19:17Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/out_py_ibr/frames/frame001.png" added="2018-07-26T00:20:38Z" modified="2018-07-26T00:20:38Z" visited="2018-07-26T00:20:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-26T00:20:38Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/alex/data/2018-07-20_sony/out_py_ibr/frames_diag/frame000.png" added="2018-07-26T16:12:56Z" modified="2018-07-26T16:12:56Z" visited="2018-07-26T16:12:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2018-07-26T16:12:56Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
