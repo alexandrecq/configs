@@ -1,11 +1,5 @@
-# ACQ's .bash_profile
-# March 2018
 
-echo -ne "Today is "; date
-cd /home/alex
-# export PRINTER=ColorLaserJet
-# export PYTHONSTARTUP="$HOME/.pythonrc"
-
+# aliases
 alias l='l -CF'
 alias ll='ls -lhF'
 alias lll='ls -ltrFh'
@@ -16,12 +10,8 @@ alias f='find . -iname'
 alias ducks='du -cks * | sort -rn|head -11' 
 alias charm='chmod +x'
 alias h='history'
-
 alias scp='scp -p'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
-
-# PATH="${PATH}":/usr/local/bin:/usr/bin:/bin:/sbin
-# export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -36,10 +26,10 @@ export HISTCONTROL=ignoreboth:erasedups # remove dupes from fzf_history
 HISTFILESIZE=100000000
 HISTSIZE=100000
 
-# bash completion settings
-bind "set completion-ignore-case on" # or set in .inputrc
+# bash completion settings (moved to .inputrc)
+# bind "set completion-ignore-case on" # or set in .inputrc
 # bind "set bell-style none" # also disables visual bell
-bind "set show-all-if-ambiguous On" #show completion without double tabbin
+# bind "set show-all-if-ambiguous On" #show completion without double tabbin
 
 umask 002 # default file permissions: all read, owner and group write
 
@@ -64,4 +54,5 @@ shopt -s cdable_vars # set the bash option so that no '$' is required when using
 # export PATH="/Users/Alex/anaconda3/bin:$PATH"
 # eval "$(register-python-argcomplete conda)"
 
-source ~/.bashrc
+# WSL default dir is /mnt/c/Users/username
+cd /home/alex
