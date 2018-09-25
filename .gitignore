@@ -9,7 +9,7 @@
 .lesshst
 .pdfbox.cache
 .pylint-gui-history
-.spacemacs
+.python-history
 .sudo_as_admin_successful
 .viminfo
 .vim_mru_files
@@ -17,6 +17,7 @@
 .xsession-errors*
 .Xauthoriy
 
+.cmake/
 .conda/
 .compiz/
 .config/
@@ -28,6 +29,7 @@
 .gnome/
 .gnupg/
 .gradle/
+.ipython/
 .java/
 .keras/
 .local/
@@ -38,10 +40,13 @@
 .parallel/
 .pyembree/
 .pylint.d/
+.python-history/
 .pki/
 .rpmdb/
 .ssh/
+.texmf-cache/
 .thumbnails/
+.thunderbird
 .venvs/
 .vim/
 .vim_runtime/
@@ -53,6 +58,9 @@ NVIDIA*/
 Software/
 anaconda3/
 Downloads/
+Documents/
 repos/
+Screenshots/
 snap/
+software/
 visby/

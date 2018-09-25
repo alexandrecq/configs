@@ -88,14 +88,9 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# # some more ls aliases
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# # Add an "alert" alias for long running commands.  Use like so:
+# #   sleep 10; alert
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -117,50 +112,73 @@ fi
 #   fi
 # fi
 
-# added by Anaconda3 4.2.0 installer
-export PATH="/home/alex/anaconda3/bin:$PATH"
-# export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
+# bind "set completion-ignore-case on" # or set in .inputrc
 
-alias wv='workon venv_enc'
-alias vsui='source activate vsui'
+alias l='l -CF'
+alias ll='ls -lhF'
+alias lll='ls -ltrFh'
+alias la='ls -A'
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+alias f='find . -iname'
+alias ducks='du -cks * | sort -rn|head -11' 
+alias charm='chmod +x'
+alias h='history'
 alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
+
+alias vsui='source activate vsui'
+# alias wv='workon venv_enc'
+
+# WSL aliases
 alias cprd='cp -vi -- "$(ls -rtd ~/winhome/Downloads/** | tail -n1)" '
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 alias findwsl='sudo find / -not \( -path /mnt/c -prune \)'
-
 mountwsl() {
     sudo mount -t drvfs $1: /mnt/$1
 }
-
 # alias cprf='cp -vi -- "$(ls -rtd .* | tail -n1)" ~/winhome/Downloads/'
 cprf() {
         cp -vi -- "$(ls -rtd "$1" | tail -n1)" ~/winhome/Downloads/
     }
+ 
+# Ubuntu workstation aliases
+alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
+alias umntgdrive='fujermount -u ~/googledrive'
 
+
+export PATH="/home/alex/anaconda3/bin:$PATH"
+# export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
+# export WORKON_HOME=~/.venvs
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PATH="/home/alex/.local/bin:$PATH"
+export PATH="/usr/local/cuda/bin:$PATH"
+
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
-export WORKON_HOME=~/.venvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export PYTHONPATH="/home/alex/Software:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/v_suite:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/v_suite/v_scripts:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/v_suite/v_suite/v_experiments:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/py_ibr/py_ibr:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/py_ibr:$PYTHONPATH"
-export PYTHONPATH="/home/alex/Software/python_scripts:$PYTHONPATH"
+# export LD_LIBRARY_PATH="/home/alex/anaconda3/envs/localexp/lib/:$LD_LIBRARY_PATH"
 
-source /home/alex/.local/bin/virtualenvwrapper.sh
+export PYTHONPATH="/home/alex/software:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/py_ibr/py_ibr:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/py_ibr:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/python_scripts:$PYTHONPATH"
+export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/mesh_processing:$PYTHONPATH"
+
+# source /home/alex/.local/bin/virtualenvwrapper.sh
 # export DISPLAY=:0
-export DISPLAY=localhost:0.0
-export NO_AT_BRIDGE=1   # X apps "Couldn't connect to accessibility bus" 
-# export BROWSER="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
-export BROWSER=/home/alex/shortcut-chrome.exe   # required for google-drive-ocamlfuse install
+# export DISPLAY=localhost:0.0
+# export NO_AT_BRIDGE=1   # X apps "Couldn't connect to accessibility bus" 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 # added by ~/.fzf/install
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # bind '^F' fzf-completion
+test -f ~/.git-completion.bash && . $_
