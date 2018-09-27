@@ -1,8 +1,23 @@
 # ACQ's inputrc file
-set comletion-ignore-case on
-# set show-all-if-ambiguous on
-# TAB: complete
+#
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+# "bind -p" to show current bindings, "bind -l" to show functions to bind
+# to identify escape characters in current terminal type: "cat", then "ctrl-V", then key
+# "ctrl-x", "ctrl-r" to restart terminal with new settings
+
 set bell-style visible
+set expand-tilde off
+# set -o vi
+
+# completion settings
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+set colored-completion-prefix on
+set colored-stats on
+
 
 # mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
 "\e[1;5C": forward-word
@@ -12,5 +27,15 @@ set bell-style visible
 "\e\e[C": forward-word
 "\e\e[D": backward-word
 
+# map up/down arrow to history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+
+"\e^P": history-search-backward
+"\e^N": history-search-forward
+
+# page up/down
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward

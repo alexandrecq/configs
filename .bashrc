@@ -112,8 +112,7 @@ fi
 #   fi
 # fi
 
-# bind "set completion-ignore-case on" # or set in .inputrc
-
+# aliases
 alias l='l -CF'
 alias ll='ls -lhF'
 alias lll='ls -ltrFh'
@@ -147,6 +146,7 @@ alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledr
 alias umntgdrive='fujermount -u ~/googledrive'
 
 
+# system path
 export PATH="/home/alex/anaconda3/bin:$PATH"
 # export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
 # export WORKON_HOME=~/.venvs
@@ -154,11 +154,13 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 export PATH="/home/alex/.local/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 
+# shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/home/alex/anaconda3/envs/localexp/lib/:$LD_LIBRARY_PATH"
 
+# python path
 export PYTHONPATH="/home/alex/software:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
