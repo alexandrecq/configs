@@ -153,6 +153,7 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PATH="/home/alex/.local/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
+export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
 
 # shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"

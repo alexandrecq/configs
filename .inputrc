@@ -34,9 +34,5 @@ set colored-stats on
 "\eOA": history-search-backward
 "\eOB": history-search-forward
 
-^P: history-search-backward
-^N: history-search-forward
-
-# page up/down
-"\e[5~": history-search-backward
-"\e[6~": history-search-forward
+C-P: history-search-backward
+C-N: history-search-forward
