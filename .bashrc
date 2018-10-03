@@ -129,17 +129,6 @@ alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias vsui='source activate vsui'
 # alias wv='workon venv_enc'
 
-# WSL aliases
-alias cprd='cp -vi -- "$(ls -rtd ~/winhome/Downloads/** | tail -n1)" '
-alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
-alias findwsl='sudo find / -not \( -path /mnt/c -prune \)'
-mountwsl() {
-    sudo mount -t drvfs $1: /mnt/$1
-}
-# alias cprf='cp -vi -- "$(ls -rtd .* | tail -n1)" ~/winhome/Downloads/'
-cprf() {
-        cp -vi -- "$(ls -rtd "$1" | tail -n1)" ~/winhome/Downloads/
-    }
  
 # Ubuntu workstation aliases
 alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
@@ -153,6 +142,7 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PATH="/home/alex/.local/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
+export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
 
 # shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
@@ -171,9 +161,6 @@ export PYTHONPATH="/home/alex/software/python_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/mesh_processing:$PYTHONPATH"
 
-export DISPLAY=:0
-export DISPLAY=localhost:0.0
-# export NO_AT_BRIDGE=1   # X apps "Couldn't connect to accessibility bus" 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -183,3 +170,8 @@ export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # bind '^F' fzf-completion
 test -f ~/.git-completion.bash && . $_
+
+kernel_release=$(uname -r)
+if [[ $kernel_release = *Microsoft* ]]; then
+    source ~/.wsl_config.sh
+fi

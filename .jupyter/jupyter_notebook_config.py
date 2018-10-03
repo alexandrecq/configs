@@ -291,6 +291,7 @@ c.NotebookApp.notebook_dir = '/home/alex/software/notebooks/'
 #  Setting to an empty string disables authentication altogether, which is NOT
 #  RECOMMENDED.
 #c.NotebookApp.token = '<generated>'
+c.NotebookApp.token = 'asdf'
 
 ## Supply overrides for the tornado.web.Application that the Jupyter notebook
 #  uses.
