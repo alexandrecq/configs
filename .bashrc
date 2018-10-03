@@ -171,9 +171,8 @@ export PYTHONPATH="/home/alex/software/python_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/mesh_processing:$PYTHONPATH"
 
-# source /home/alex/.local/bin/virtualenvwrapper.sh
-# export DISPLAY=:0
-# export DISPLAY=localhost:0.0
+export DISPLAY=:0
+export DISPLAY=localhost:0.0
 # export NO_AT_BRIDGE=1   # X apps "Couldn't connect to accessibility bus" 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
