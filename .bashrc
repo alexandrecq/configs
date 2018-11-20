@@ -132,8 +132,9 @@ alias vsui='source activate vsui'
  
 # Ubuntu workstation aliases
 alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
-alias umntgdrive='fujermount -u ~/googledrive'
+alias umntgdrive='fusermount -u ~/googledrive'
 
+export GOPATH="$HOME/.gopath"
 
 # system path
 export PATH="/home/alex/anaconda3/bin:$PATH"
@@ -143,6 +144,8 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 export PATH="/home/alex/.local/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
@@ -155,11 +158,8 @@ export PYTHONPATH="/home/alex/software:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/py_ibr/py_ibr:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/py_ibr:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/python_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/mesh_processing:$PYTHONPATH"
+
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8

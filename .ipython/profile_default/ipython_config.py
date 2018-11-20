@@ -601,8 +601,9 @@
 c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 c.InteractiveShellApp.exec_lines = [
-        'import numpy as np',
-        'import matplotlib.pyplot as plt',
-        'import imageio, os, json, pickle',
-        'from v_suite.v_utils import file_utils as fu'
-        ]
+    'import numpy as np',
+    'import matplotlib.pyplot as plt',
+    'import imageio, os, json, pickle, glob',
+    'from v_suite.v_utils import file_utils as fu'
+]
+# c.readline_parse_and_bind("set expand-tilde off")
