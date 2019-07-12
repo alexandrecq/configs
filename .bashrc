@@ -161,9 +161,8 @@ export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/netdef_slim:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/MVSNet:$PYTHONPATH"
+export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
