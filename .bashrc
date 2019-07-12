@@ -125,6 +125,7 @@ alias charm='chmod +x'
 alias h='history'
 alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
+alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
 
 alias vsui='source activate vsui'
 # alias wv='workon venv_enc'
@@ -143,7 +144,8 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PATH="/home/alex/.local/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
-export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
+# export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
+export PATH="/home/alex/repos/draco/build:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
@@ -159,7 +161,9 @@ export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
-
+export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
+export PYTHONPATH="/home/alex/repos/netdef_slim:$PYTHONPATH"
+export PYTHONPATH="/home/alex/repos/MVSNet:$PYTHONPATH"
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
