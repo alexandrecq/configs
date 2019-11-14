@@ -14,5 +14,6 @@
     lg = log --graph --oneline
     unstage = reset HEAD --
     last = log -1 HEAD
+    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
 	default = current

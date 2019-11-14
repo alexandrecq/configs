@@ -126,9 +126,11 @@ alias h='history'
 alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
+alias dus='du -hd 1 | sort -hr'
 
 alias vsui='source activate vsui'
 # alias wv='workon venv_enc'
+alias socat='source ~/catkin_ws/devel/setup.bash'
 
  
 # Ubuntu workstation aliases
@@ -138,7 +140,6 @@ alias umntgdrive='fusermount -u ~/googledrive'
 export GOPATH="$HOME/.gopath"
 
 # system path
-export PATH="/home/alex/anaconda3/bin:$PATH"
 # export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
 # export WORKON_HOME=~/.venvs
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -151,9 +152,13 @@ export PATH="$GOPATH/bin:$PATH"
 
 # shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/home/alex/anaconda3/envs/localexp/lib/:$LD_LIBRARY_PATH"
+
+# setup ROS-kinetic env variables
+# source /opt/ros/kinetic/setup.bash
 
 # python path
 export PYTHONPATH="/home/alex/software:$PYTHONPATH"
@@ -163,6 +168,8 @@ export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/netdef_slim:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
+# export PYTHONPATH="/home/alex/repos/S2Dnet/:$PYTHONPATH"
+# export PYTHONPATH="/home/alex/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
@@ -178,3 +185,21 @@ kernel_release=$(uname -r)
 if [[ $kernel_release = *Microsoft* ]]; then
     source ~/.wsl_config.sh
 fi
+
+. /home/alex/torch/install/bin/torch-activate
+
+# export PATH="/home/alex/anaconda3/bin:$PATH"  # commented out by conda initialize
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/alex/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/alex/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/alex/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/alex/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
