@@ -127,11 +127,27 @@ alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
 alias dus='du -hd 1 | sort -hr'
+alias df='df -x"squashfs"'
 
-alias vsui='source activate vsui'
+alias vsui='conda activate vsui'
 # alias wv='workon venv_enc'
 alias socat='source ~/catkin_ws/devel/setup.bash'
-
+function mkdircd(){
+    mkdir -p $1
+    cd $1
+}
+function search_configs(){
+    for DIR in `ls -I "*.*" .`; do
+        echo $DIR;
+        cat $DIR/*.ini | grep -i "$1";
+    done
+}
+function lib_installed() {
+    /sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep $1;
+}
+function check() {
+    lib_installed $1 && echo "$1 is installed" || echo "ERROR: $1 is NOT installed";
+}
  
 # Ubuntu workstation aliases
 alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
@@ -139,7 +155,7 @@ alias umntgdrive='fusermount -u ~/googledrive'
 
 export GOPATH="$HOME/.gopath"
 
-# system path
+## system path
 # export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
 # export WORKON_HOME=~/.venvs
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -149,19 +165,20 @@ export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="/home/alex/repos/draco/build:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/lib/nodejs/node-v12.16.3-linux-x64/bin:$PATH"
 
-# shared library path
+## shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-# export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
-# export LD_LIBRARY_PATH="/home/alex/anaconda3/envs/localexp/lib/:$LD_LIBRARY_PATH"
 
 # setup ROS-kinetic env variables
 # source /opt/ros/kinetic/setup.bash
 
-# python path
+## python path
 export PYTHONPATH="/home/alex/software:$PYTHONPATH"
+export PYTHONPATH="/home/alex/software/diff_ibr:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
 export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
@@ -203,3 +220,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/alex/google-cloud-sdk/path.bash.inc' ]; then . '/home/alex/google-cloud-sdk/path.bash.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/alex/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alex/google-cloud-sdk/completion.bash.inc'; fi
+# end cloud SDK

@@ -261,3 +261,6 @@ ignore-iface-methods=isImplementedBy,deferred,extends,names,namesAndDescriptions
 
 # List of method names used to declare (i.e. assign) instance attributes.
 defining-attr-methods=__init__,__new__,setUp
+
+# Whitelist safe c-extension packages
+extension-pkg-whitelist=cv2
