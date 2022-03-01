@@ -127,7 +127,7 @@ alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
 alias dus='du -hd 1 | sort -hr'
-alias df='df -x"squashfs"'
+alias dfh='df -h -x"squashfs"'
 
 alias vsui='conda activate vsui'
 # alias wv='workon venv_enc'
@@ -169,8 +169,10 @@ export PATH="/usr/local/lib/nodejs/node-v12.16.3-linux-x64/bin:$PATH"
 
 ## shared library path
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/optix/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/opt/lib/openexr-2.3.0/lib/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
 
 # setup ROS-kinetic env variables
@@ -185,6 +187,8 @@ export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH
 export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/netdef_slim:$PYTHONPATH"
 export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
+export PYTHONPATH="/home/alex/repos/PyOptiX:$PYTHONPATH"
+# export PYTHONPATH="/home/alex/repos/BoostingMonocularDepth:$PYTHONPATH"
 # export PYTHONPATH="/home/alex/repos/S2Dnet/:$PYTHONPATH"
 # export PYTHONPATH="/home/alex/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
 
