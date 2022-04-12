@@ -18,7 +18,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=100000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -100,133 +100,81 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-# if ! shopt -oq posix; then
-#   if [ -f /usr/share/bash-completion/bash_completion ]; then
-#     . /usr/share/bash-completion/bash_completion
-#   elif [ -f /etc/bash_completion ]; then
-#     . /etc/bash_completion
-#   fi
-# fi
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+# OSX equivalent:
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# aliases
-alias l='l -CF'
-alias ll='ls -lhF'
-alias lll='ls -ltrFh'
-alias la='ls -A'
-alias ..='cd ..'
-alias ...='cd .. ; cd ..'
-alias f='find . -iname'
-alias ducks='du -cks * | sort -rn|head -11' 
-alias charm='chmod +x'
-alias h='history'
-alias sagi='sudo apt-get install'
-alias sagu='sudo apt-get update && sudo apt-get upgrade'
-alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
-alias dus='du -hd 1 | sort -hr'
-alias dfh='df -h -x"squashfs"'
 
-alias vsui='conda activate vsui'
-# alias wv='workon venv_enc'
-alias socat='source ~/catkin_ws/devel/setup.bash'
-function mkdircd(){
-    mkdir -p $1
-    cd $1
-}
-function search_configs(){
-    for DIR in `ls -I "*.*" .`; do
-        echo $DIR;
-        cat $DIR/*.ini | grep -i "$1";
-    done
-}
-function lib_installed() {
-    /sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep $1;
-}
-function check() {
-    lib_installed $1 && echo "$1 is installed" || echo "ERROR: $1 is NOT installed";
-}
- 
-# Ubuntu workstation aliases
-alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
-alias umntgdrive='fusermount -u ~/googledrive'
-
+## PATHS
 export GOPATH="$HOME/.gopath"
 
 ## system path
 # export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
-# export WORKON_HOME=~/.venvs
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export PATH="/home/alex/.local/bin:$PATH"
-export PATH="/usr/local/cuda/bin:$PATH"
-# export PATH="/home/alex/repos/PyMesh/third_party/build/draco/:$PATH"
-export PATH="/home/alex/repos/draco/build:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-export PATH="/usr/local/lib/nodejs/node-v12.16.3-linux-x64/bin:$PATH"
+# export WORKON_HOME=~/.venvs
+# export PATH="$HOME/.local/bin:$PATH"
+# export PATH="/usr/local/cuda/bin:$PATH"
+# export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:/Applications/MATLAB_R2021b.app/bin"
+export PATH="$PATH:/Users/adech/Library/Python/3.8/bin"
+export PATH="$PATH:/Applications/COLMAP.app/Contents/MacOS/"
 
 ## shared library path
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/optix/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/opt/lib/openexr-2.3.0/lib/:$LD_LIBRARY_PATH"
-# export LD_LIBRARY_PATH="/usr/local/lib/opencvlib:$LD_LIBRARY_PATH"
-
-# setup ROS-kinetic env variables
-# source /opt/ros/kinetic/setup.bash
+# export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+# export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
+# export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 
 ## python path
-export PYTHONPATH="/home/alex/software:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/diff_ibr:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/v_suite:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/v_suite/v_scripts:$PYTHONPATH"
-export PYTHONPATH="/home/alex/software/v_suite/v_suite/v_experiments:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/pyfusion:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/netdef_slim:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/lmbspecialops/python:$PYTHONPATH"
-export PYTHONPATH="/home/alex/repos/PyOptiX:$PYTHONPATH"
-# export PYTHONPATH="/home/alex/repos/BoostingMonocularDepth:$PYTHONPATH"
-# export PYTHONPATH="/home/alex/repos/S2Dnet/:$PYTHONPATH"
-# export PYTHONPATH="/home/alex/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
+# export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
+export PYTHONPATH="$PYTHONPATH:$HOME/software"
+export PYTHONPATH="$PYTHONPATH:$HOME/software/calibration"
+export PYTHONPATH="$PYTHONPATH:$HOME/software/v_suite"
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
-# added by ~/.fzf/install
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# bind '^F' fzf-completion
-test -f ~/.git-completion.bash && . $_
-
 kernel_release=$(uname -r)
 if [[ $kernel_release = *Microsoft* ]]; then
     source ~/.wsl_config.sh
 fi
 
-. /home/alex/torch/install/bin/torch-activate
+# . $HOME/torch/install/bin/torch-activate
 
-# export PATH="/home/alex/anaconda3/bin:$PATH"  # commented out by conda initialize
+## Conda stuff
+# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alex/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alex/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alex/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alex/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "$HOME/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="$HOME/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/alex/google-cloud-sdk/path.bash.inc' ]; then . '/home/alex/google-cloud-sdk/path.bash.inc'; fi
+# if [ -f '$HOME/google-cloud-sdk/path.bash.inc' ]; then . '$HOME/google-cloud-sdk/path.bash.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/alex/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alex/google-cloud-sdk/completion.bash.inc'; fi
+# if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then . '$HOME/google-cloud-sdk/completion.bash.inc'; fi
 # end cloud SDK
