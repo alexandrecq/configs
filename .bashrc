@@ -127,11 +127,8 @@ export GOPATH="$HOME/.gopath"
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # export WORKON_HOME=~/.venvs
 # export PATH="$HOME/.local/bin:$PATH"
-# export PATH="/usr/local/cuda/bin:$PATH"
 # export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:/Applications/MATLAB_R2021b.app/bin"
-export PATH="$PATH:/Users/adech/Library/Python/3.8/bin"
-export PATH="$PATH:/Applications/COLMAP.app/Contents/MacOS/"
+export PATH="/usr/local/cuda/bin:$PATH"
 
 ## shared library path
 # export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
@@ -153,6 +150,10 @@ kernel_release=$(uname -r)
 if [[ $kernel_release = *Microsoft* ]]; then
     source ~/.wsl_config.sh
 fi
+kernel_name=$(uname -s)
+if [[ $kernel_name = Darwin ]]; then
+    source ~/.macos_profile.sh
+fi
 
 # . $HOME/torch/install/bin/torch-activate
 
@@ -160,17 +161,17 @@ fi
 # export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "$HOME/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="$HOME/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
+__conda_setup="$('/home/dolbyix/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dolbyix/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/dolbyix/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dolbyix/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 # The next line updates PATH for the Google Cloud SDK.
