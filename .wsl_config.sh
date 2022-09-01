@@ -2,7 +2,6 @@
 
 # aliases
 alias cprd='cp -vi -- "$(ls -rtd ~/winhome/Downloads/** | tail -n1)" '
-alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 alias findwsl='sudo find / -not \( -path /mnt/c -prune \)'
 mountwsl() {
     sudo mount -t drvfs $1: /mnt/$1

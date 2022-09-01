@@ -131,15 +131,19 @@ export GOPATH="$HOME/.gopath"
 export PATH="/usr/local/cuda/bin:$PATH"
 
 ## shared library path
-# export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/repos/instant-npg/build"
 # export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
+
+export CPATH=$CPATH:"/usr/include/x86_64-linux-gnu/"
 
 ## python path
 # export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
 export PYTHONPATH="$PYTHONPATH:$HOME/software"
 export PYTHONPATH="$PYTHONPATH:$HOME/software/calibration"
-export PYTHONPATH="$PYTHONPATH:$HOME/software/v_suite"
+export PYTHONPATH="$PYTHONPATH:$HOME/repos/instant-ngp/scripts"
+export PYTHONPATH="$PYTHONPATH:$HOME/repos/plenoctree"
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8

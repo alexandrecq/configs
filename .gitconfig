@@ -1,6 +1,6 @@
 [user]
 	name = alexandrecq
-	email = alex@visby.io
+	email = adech@dolby.com
 [core]
 	editor = vim
 	excludesfile = /home/alex/.gitignore_global
