@@ -141,9 +141,11 @@ export CPATH=$CPATH:"/usr/include/x86_64-linux-gnu/"
 ## python path
 # export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
 export PYTHONPATH="$PYTHONPATH:$HOME/software"
-export PYTHONPATH="$PYTHONPATH:$HOME/software/calibration"
+export PYTHONPATH="$PYTHONPATH:$HOME/software/multiview_calibration"
 export PYTHONPATH="$PYTHONPATH:$HOME/repos/instant-ngp/scripts"
 export PYTHONPATH="$PYTHONPATH:$HOME/repos/plenoctree"
+export PYTHONPATH="$PYTHONPATH:$HOME/repos/TensoRF"
+export OPENCV_IO_ENABLE_OPENEXR=1  # explicitly enable EXR support in opencv-python>=4.6
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8

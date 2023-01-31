@@ -18,6 +18,7 @@ alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 
+
 # alias vsui='conda activate vsui'
 # alias wv='workon venv_enc'
 # alias socat='source ~/catkin_ws/devel/setup.bash'
@@ -42,4 +43,4 @@ function check() {
 # alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
 # alias umntgdrive='fusermount -u ~/googledrive'
 alias juplaunch='screen jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
-
+alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
