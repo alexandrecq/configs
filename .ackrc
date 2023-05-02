@@ -1,1 +1,2 @@
 --pager=less -RFX
+--type-set=cpp=.cpp,.h,.hpp,.cu
