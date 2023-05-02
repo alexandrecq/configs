@@ -19,9 +19,11 @@ alias matlab='matlab -nodesktop -nosplash'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 
 
-# alias vsui='conda activate vsui'
-# alias wv='workon venv_enc'
-# alias socat='source ~/catkin_ws/devel/setup.bash'
+alias sshix='ssh -YC dolbyix@$DESKTOP_IP'
+# alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
+alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
+alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 dolbyix@$DESKTOP_IP'
+
 function mkdircd(){
     mkdir -p $1
     cd $1
