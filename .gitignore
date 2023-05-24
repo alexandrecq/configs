@@ -1,5 +1,7 @@
+# gitignore for .configs repo
 __pycache__/
 
+# Hidden files
 .ICEauthority
 .bash_history
 .dmrc
@@ -10,6 +12,7 @@ __pycache__/
 .dbus
 .lesshst
 .pdfbox.cache
+.private_vars
 .pylint-gui-history
 .python-history
 .sudo_as_admin_successful
@@ -19,6 +22,7 @@ __pycache__/
 .xsession-errors*
 .Xauthoriy
 
+# Hidden directories
 .cmake/
 .conda/
 .compiz/
@@ -56,14 +60,16 @@ __pycache__/
 
 examples.desktop
 
+# Other home directories
 NVIDIA*/
-Software/
 anaconda3/
 Downloads/
 Documents/
+Pictures/
 repos/
+Software/
 Screenshots/
 snap/
 software/
-visby/
+Videos/
 winhome/
