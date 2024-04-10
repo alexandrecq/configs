@@ -97,6 +97,9 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+if [ -f ~/.env_vars ]; then
+    . ~/.env_vars
+fi
 if [ -f ~/.private_vars ]; then
     . ~/.private_vars
 fi
@@ -122,35 +125,6 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 
-## PATHS
-export GOPATH="$HOME/.gopath"
-
-## system path
-# export VIRTUALENVWRAPPER_PYTHON=~/anaconda3/bin/python3
-# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# export WORKON_HOME=~/.venvs
-# export PATH="$HOME/.local/bin:$PATH"
-# export PATH="$GOPATH/bin:$PATH"
-export PATH="/usr/local/cuda/bin:$PATH"
-
-## shared library path
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/repos/instant-npg/build"
-# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/repos/ReRF/ac_dc"
-# export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-# export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
-
-export CPATH=$CPATH:"/usr/include/x86_64-linux-gnu/"
-
-## python path
-# export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
-export PYTHONPATH="$PYTHONPATH:$HOME/software"
-export PYTHONPATH="$PYTHONPATH:$HOME/software/multiview_calibration"
-export PYTHONPATH="$PYTHONPATH:$HOME/software/video_latent_encoding"
-export PYTHONPATH="$PYTHONPATH:$HOME/repos/instant-ngp/scripts"
-# export PYTHONPATH="$PYTHONPATH:$HOME/repos/plenoctree"
-# export PYTHONPATH="$PYTHONPATH:$HOME/repos/TensoRF"
-export OPENCV_IO_ENABLE_OPENEXR=1  # explicitly enable EXR support in opencv-python>=4.6
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8

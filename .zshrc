@@ -106,9 +106,15 @@ source $ZSH/oh-my-zsh.sh
 setopt nocorrectall
 setopt correct
 unsetopt autopushd  # set in lib/directories.zsh
-# unset LESS  # disable git commands piped to less
-LESS=-RFX
+# unset LESS  # disable git commands piped to less...
+LESS=-RFX  # ...or keep it but configure it
 
+if [ -f ~/.env_vars ]; then
+    . ~/.env_vars
+fi
+if [ -f ~/.private_vars ]; then
+    . ~/.private_vars
+fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -127,4 +133,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
