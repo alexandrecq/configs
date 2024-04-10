@@ -17,6 +17,7 @@ alias dfh='df -h -x"squashfs"'
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+alias nv='nvim'
 
 
 alias sshix='ssh -YC dolbyix@$DESKTOP_IP'

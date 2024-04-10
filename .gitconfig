@@ -2,7 +2,7 @@
 	name = alexandrecq
 	email = adech@dolby.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/dolbyix/.gitignore_global
 
 [alias]
@@ -11,6 +11,7 @@
     ci = commit
     st = status
     df = diff -w
+    dfno = diff --name-only
     lg = log --graph --oneline
     unstage = reset HEAD --
     last = log -1 HEAD

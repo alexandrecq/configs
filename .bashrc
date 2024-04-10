@@ -136,6 +136,7 @@ export PATH="/usr/local/cuda/bin:$PATH"
 ## shared library path
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/repos/instant-npg/build"
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/repos/ReRF/ac_dc"
 # export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
 
@@ -145,9 +146,10 @@ export CPATH=$CPATH:"/usr/include/x86_64-linux-gnu/"
 # export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages:$PYTHONPATH"
 export PYTHONPATH="$PYTHONPATH:$HOME/software"
 export PYTHONPATH="$PYTHONPATH:$HOME/software/multiview_calibration"
+export PYTHONPATH="$PYTHONPATH:$HOME/software/video_latent_encoding"
 export PYTHONPATH="$PYTHONPATH:$HOME/repos/instant-ngp/scripts"
-export PYTHONPATH="$PYTHONPATH:$HOME/repos/plenoctree"
-export PYTHONPATH="$PYTHONPATH:$HOME/repos/TensoRF"
+# export PYTHONPATH="$PYTHONPATH:$HOME/repos/plenoctree"
+# export PYTHONPATH="$PYTHONPATH:$HOME/repos/TensoRF"
 export OPENCV_IO_ENABLE_OPENEXR=1  # explicitly enable EXR support in opencv-python>=4.6
 
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
@@ -170,14 +172,14 @@ fi
 # export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dolbyix/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/techix/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/dolbyix/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dolbyix/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/techix/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/techix/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/dolbyix/anaconda3/bin:$PATH"
+        export PATH="/home/techix/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
