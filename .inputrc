@@ -10,8 +10,10 @@ set expand-tilde off
 # set -o vi
 
 # completion settings
-TAB: menu-complete
-"\e[Z": menu-complete-backward
+# TAB: menu-complete
+# "\e[Z": menu-complete-backward
+"[Z": menu-complete
+"^[[Z": menu-complete-backward
 set completion-ignore-case on
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
