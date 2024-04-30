@@ -17,6 +17,7 @@ alias dfh='df -h -x"squashfs"'
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+alias vi='nvim'
 alias nv='nvim'
 
 
@@ -47,3 +48,6 @@ function check() {
 # alias umntgdrive='fusermount -u ~/googledrive'
 # alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
 alias juplaunch='screen jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
+function launch_tensorboard(){
+    screen tensorboard --host localhost --port 7008 --logdir="$1"
+}

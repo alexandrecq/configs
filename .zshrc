@@ -110,12 +110,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Custom config starts here
+
 # Disable autocorrect on command args
 setopt nocorrectall
 setopt correct
+
 unsetopt autopushd  # set in lib/directories.zsh
 # unset LESS  # disable git commands piped to less...
 LESS=-RFX  # ...or keep it but configure it
+
+# don't remove space before ' \t\n;&|'
+ZLE_REMOVE_SUFFIX_CHARS=""
+
+# End custom config
+
 
 if [ -f ~/.env_vars ]; then
     . ~/.env_vars

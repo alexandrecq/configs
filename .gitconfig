@@ -3,7 +3,7 @@
 	email = adech@dolby.com
 [core]
 	editor = nvim
-	excludesfile = /home/dolbyix/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [alias]
     co = checkout
