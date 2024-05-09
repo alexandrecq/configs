@@ -16,15 +16,17 @@ alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
 alias dfh='df -h -x"squashfs"'
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
-alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
-#alias vi='nvim'
+# alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+# TODO test --apple-use-keychain (to enable after restart)
+alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+alias vi='vim'
 alias nv='nvim'
 
 
-alias sshix='ssh -YC dolbyix@$DESKTOP_IP'
+alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
 # alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
-alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
-alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 dolbyix@$DESKTOP_IP'
+alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
+alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
 
 function mkdircd(){
     mkdir -p $1
