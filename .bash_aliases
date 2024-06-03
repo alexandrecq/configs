@@ -16,17 +16,23 @@ alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
 alias dfh='df -h -x"squashfs"'
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
-# alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
-# TODO test --apple-use-keychain (to enable after restart)
-alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+# # TODO test --apple-use-keychain (to enable after restart)
+# alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
 alias vi='nvim'
 alias nv='nvim'
-
+alias kssh='kitten ssh'
 
 alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
 # alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
-alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
-alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
+# alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
+# alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
+sshtunnel7007() {
+    local var_name="A100$1"
+    eval host_name=\$$var_name
+    screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 adech@$host_name
+}
+alias sshtunnel7008='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7008:localhost:7008 adech@$A1001'
 
 function mkdircd(){
     mkdir -p $1
@@ -53,3 +59,5 @@ alias juplaunch='screen jupyter lab --no-browser --notebook-dir ~/software/noteb
 function launch_tensorboard(){
     screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
+
+alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/marvin_home/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
