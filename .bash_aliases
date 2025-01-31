@@ -27,12 +27,16 @@ alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
 # alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
 # alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
 # alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
+# 3d viewer on A100-x
 sshtunnel7007() {
     local var_name="A100$1"
     eval host_name=\$$var_name
     screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 adech@$host_name
 }
-alias sshtunnel7008='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7008:localhost:7008 adech@$A1001'
+# tensorboard on A100-1
+alias sshtunnel7008='screen -dmS tensorboard7008tunnelA1001 autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7008:localhost:7008 adech@$A1001'
+# jupyterlab on A100-6
+alias sshtunnel8080='screen -dmS jupyterlab8080tunnelA1006 autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 adech@$A1006'
 
 function mkdircd(){
     mkdir -p $1
@@ -60,4 +64,15 @@ function launch_tensorboard(){
     screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
 
-alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/marvin_home/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
+# alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
+sync_outputs() {
+  local extension="${1:-jpg}"  # Use provided extension or default to jpg
+  local source_path="adech@$A1001:/home/adech/repos/dolby-nerfstudio/outputs/"
+  local dest_path="$HOME/dolby/data/nerfstudio_outputs/"
+  rsync -avz --include="*/" --include="*.${extension}" --exclude="*" "${source_path}" "${dest_path}"
+}
+
+# hard-coded src/dest dirs
+alias lauch_sync_session="screen -dmS sync_session bash -c 'fswatch -r ~/repos/NoPoSplat | while read -r file; do rsync -avz ~/repos/NoPoSplat adech@$A1001:/home/adech/repos/; done'"
+# dynamic version - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
+alias launch_sync_session="function _start_sync() { screen -dmS sync_session bash -c \"fswatch -r \$1 | while read -r file; do rsync -avz \$1/ \$2; done\"; }; _start_sync"

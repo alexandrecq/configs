@@ -143,7 +143,7 @@ fi
 # . $HOME/torch/install/bin/torch-activate
 
 ## Conda stuff
-# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
+export PATH="$PATH:$HOME/anaconda3/bin"  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/techix/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
