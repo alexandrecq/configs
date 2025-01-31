@@ -1,3 +1,4 @@
 channels:
+  - nvidia
   - conda-forge
   - defaults

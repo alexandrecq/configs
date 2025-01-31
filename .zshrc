@@ -18,6 +18,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,7 +80,9 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+#
+# reference: https://www.josean.com/posts/terminal-setup
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,6 +125,8 @@ LESS=-RFX  # ...or keep it but configure it
 # don't remove space before ' \t\n;&|'
 ZLE_REMOVE_SUFFIX_CHARS=""
 
+# set autosuggest fg color so it's visible against bg
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 # End custom config
 
 
