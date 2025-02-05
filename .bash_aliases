@@ -46,7 +46,7 @@ function check() {
 # alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
 alias juplaunch='screen -dmS jup jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
 function launch_tensorboard(){
-    screen tensorboard --host localhost --port 7008 --logdir="$1"
+    screen -dmS tb_screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
 
 
