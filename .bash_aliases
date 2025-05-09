@@ -39,6 +39,13 @@ function lib_installed() {
 function check() {
     lib_installed $1 && echo "$1 is installed" || echo "ERROR: $1 is NOT installed";
 }
+# kill processes of open files in a directory (to avoid 'device or resource busy' nfs error)
+function killopen() {
+    find "$1" -mindepth 1 -maxdepth 1 -print0 | while IFS= read -r -d '' file; do
+        echo "$file"
+        lsof -t "$file" 2>/dev/null | xargs -r kill
+    done
+}
  
 ## Ubuntu aliases
 # alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
