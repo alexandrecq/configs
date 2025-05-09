@@ -164,3 +164,4 @@ unset __conda_setup
 # The next line enables shell command completion for gcloud.
 # if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then . '$HOME/google-cloud-sdk/completion.bash.inc'; fi
 # end cloud SDK
+. "$HOME/.cargo/env"
