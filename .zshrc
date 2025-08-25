@@ -116,7 +116,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Disable autocorrect on command args
 setopt nocorrectall
-setopt correct
+# setopt correct
 
 unsetopt autopushd  # set in lib/directories.zsh
 # unset LESS  # disable git commands piped to less...

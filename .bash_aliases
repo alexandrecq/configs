@@ -24,19 +24,39 @@ alias nv='nvim'
 alias kssh='kitten ssh'
 
 alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
-# alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
-# alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
-# alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
-# 3d viewer on A100-x
-sshtunnel7007() {
-    local var_name="A100$1"
+sshtunnel() {
+    local server_idx="$1"
+    local port="${2:-7007}"
+    local session_name="$3"  # Optional: user-defined session name
+
+    # Extract hostname from the variable name
+    local var_name="A100$server_idx"
     eval host_name=\$$var_name
-    screen -dmS sshtunnel7007 autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 adech@$host_name
+
+    if [[ -z "$host_name" ]]; then
+        echo "Error: Unknown host variable A100$server_idx"
+        return 1
+    fi
+
+    # If session name not provided, default to sshtunnel-<port>-<host>
+    if [[ -z "$session_name" ]]; then
+        session_name="sshtunnel-${local_port}-${host_name}"
+    fi
+
+    local full_cmd="autossh -M 0 \
+    -o \"ServerAliveInterval 30\" \
+    -o \"ServerAliveCountMax 3\" \
+    -L ${port}:localhost:${port} \
+    adech@${host_name}"
+
+    echo "Launching screen session: $session_name"
+    screen -dmS "$session_name" bash -c "$full_cmd"
 }
+
 # tensorboard on A100-6
-alias sshtunnel7008='screen -dmS tensorboard7008tunnelA1006 autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7008:localhost:7008 adech@$A1006'
+alias sshtunnel_tensorbard='sshtunnel 6 7008 tensorboard'
 # jupyterlab on A100-6
-alias sshtunnel8080='screen -dmS jupyterlab8080tunnelA1006 autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 adech@$A1006'
+alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
 
 function mkdircd(){
     mkdir -p $1
@@ -73,10 +93,8 @@ sync_outputs() {
 }
 alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" adech@$A1005:/home/adech/repos/gsplat/results/ ~/dolby/data/gsplat_results/'
 
-# # hard-coded src/dest dirs
-# alias launch_sync_session="screen -dmS sync_session bash -c 'fswatch -r ~/repos/NoPoSplat | while read -r file; do rsync -avz ~/repos/NoPoSplat adech@$A1001:/home/adech/repos/; done'"
-# # dynamic version - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
+# # dynamic version, custom paths - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
 # alias launch_sync_session="function _start_sync() { screen -dmS sync_session_$1 bash -c \"fswatch -r \$1 | while read -r file; do rsync -avz \$1/ \$2; done\"; }; _start_sync"
-# dynamic version - launch as `launch_sync_session repo_name`
+# dynamic version, ~/repos only - launch as `launch_sync_session repo_name`
 alias launch_sync_session="function _start_sync() { screen -dmS sync_session_\$1 bash -c \"fswatch -r ~/repos/\$1 | while read -r file; do rsync -avz ~/repos/\$1 adech@$A1005:~/repos/; done\"; }; _start_sync"
 # launch_sync_session ~/repos/NoPoSplat adech@$A1005:~/repos/NoPoSplat
