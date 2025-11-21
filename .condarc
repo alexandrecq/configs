@@ -2,3 +2,4 @@ channels:
   - nvidia
   - conda-forge
   - defaults
+channel_priority: flexible
