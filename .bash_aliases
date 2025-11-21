@@ -23,6 +23,42 @@ alias vi='nvim'
 alias nv='nvim'
 alias kssh='kitten ssh'
 
+# Remote aliases/functions
+alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
+sshtunnel() {
+    # syntax: sshtunnel 6 7009 name
+    local server_idx="$1"
+    local port="${2:-7007}"
+    local session_name="$3"  # Optional: user-defined session name
+
+    # Extract hostname from the variable name
+    local var_name="A100$server_idx"
+    eval host_name=\$$var_name
+
+    if [[ -z "$host_name" ]]; then
+        echo "Error: Unknown host variable A100$server_idx"
+        return 1
+    fi
+
+    # If session name not provided, default to sshtunnel-<port>-<host>
+    if [[ -z "$session_name" ]]; then
+        session_name="sshtunnel-${local_port}-${host_name}"
+    fi
+
+    local full_cmd="autossh -M 0 \
+    -o \"ServerAliveInterval 30\" \
+    -o \"ServerAliveCountMax 3\" \
+    -L ${port}:localhost:${port} \
+    adech@${host_name}"
+
+    echo "Launching screen session: $session_name"
+    screen -dmS "$session_name" bash -c "$full_cmd"
+}
+# tensorboard on A100-6
+alias sshtunnel_tensorboard='sshtunnel 6 7008 tensorboard'
+# jupyterlab on A100-6
+alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
+
 function mkdircd(){
     mkdir -p $1
     cd $1
@@ -50,19 +86,6 @@ function launch_tensorboard(){
 }
 
 
-# Remote aliases/functions
-alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
-# alias sshtunnel='screen ssh -L 8080:localhost:8080 dolbyix@$DESKTOP_IP'
-# alias sshtunnel8080='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 8080:localhost:8080 $GREEN_USERNAME@$GREEN_IP'
-# alias sshtunnel7007='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 $GREEN_USERNAME@$GREEN_IP'
-sshtunnel7007() {
-    local var_name="A100$1"
-    eval host_name=\$$var_name
-    screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7007:localhost:7007 adech@$host_name
-}
-alias sshtunnel7008='screen autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 7008:localhost:7008 adech@$A1001'
-alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/marvin_home/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
-
 # Function to synchronize repos between two machines
 sync_repo() {
   local direction=$(echo "$1" | xargs)  # Trims whitespace
@@ -87,3 +110,18 @@ sync_repo() {
     echo "Invalid direction. Use 'l2r' or 'r2l'."
   fi
 }
+
+# alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
+sync_outputs() {
+  local extension="${1:-jpg}"  # Use provided extension or default to jpg
+  local source_path="adech@$A1001:/home/adech/repos/dolby-nerfstudio/outputs/"
+  local dest_path="$HOME/dolby/data/nerfstudio_outputs/"
+  rsync -avz --include="*/" --include="*.${extension}" --exclude="*" "${source_path}" "${dest_path}"
+}
+alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" adech@$A1005:/home/adech/repos/gsplat/results/ ~/dolby/data/gsplat_results/'
+
+# # dynamic version, custom paths - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
+# alias launch_sync_session="function _start_sync() { screen -dmS sync_session_$1 bash -c \"fswatch -r \$1 | while read -r file; do rsync -avz \$1/ \$2; done\"; }; _start_sync"
+# dynamic version, ~/repos only - launch as `launch_sync_session repo_name`
+alias launch_sync_session="function _start_sync() { screen -dmS sync_session_\$1 bash -c \"fswatch -r ~/repos/\$1 | while read -r file; do rsync -avz ~/repos/\$1 adech@$A1006:~/repos/; done\"; }; _start_sync"
+# launch_sync_session ~/repos/NoPoSplat adech@$A1005:~/repos/NoPoSplat

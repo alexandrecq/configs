@@ -143,7 +143,7 @@ fi
 # . $HOME/torch/install/bin/torch-activate
 
 ## Conda stuff
-# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
+export PATH="$PATH:$HOME/anaconda3/bin"  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/techix/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -164,3 +164,4 @@ unset __conda_setup
 # The next line enables shell command completion for gcloud.
 # if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then . '$HOME/google-cloud-sdk/completion.bash.inc'; fi
 # end cloud SDK
+. "$HOME/.cargo/env"
