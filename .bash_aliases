@@ -25,6 +25,7 @@ alias kssh='kitten ssh'
 
 alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
 sshtunnel() {
+    # syntax: sshtunnel 6 7009 name
     local server_idx="$1"
     local port="${2:-7007}"
     local session_name="$3"  # Optional: user-defined session name
@@ -54,7 +55,7 @@ sshtunnel() {
 }
 
 # tensorboard on A100-6
-alias sshtunnel_tensorbard='sshtunnel 6 7008 tensorboard'
+alias sshtunnel_tensorboard='sshtunnel 6 7008 tensorboard'
 # jupyterlab on A100-6
 alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
 
@@ -96,5 +97,5 @@ alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" a
 # # dynamic version, custom paths - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
 # alias launch_sync_session="function _start_sync() { screen -dmS sync_session_$1 bash -c \"fswatch -r \$1 | while read -r file; do rsync -avz \$1/ \$2; done\"; }; _start_sync"
 # dynamic version, ~/repos only - launch as `launch_sync_session repo_name`
-alias launch_sync_session="function _start_sync() { screen -dmS sync_session_\$1 bash -c \"fswatch -r ~/repos/\$1 | while read -r file; do rsync -avz ~/repos/\$1 adech@$A1005:~/repos/; done\"; }; _start_sync"
+alias launch_sync_session="function _start_sync() { screen -dmS sync_session_\$1 bash -c \"fswatch -r ~/repos/\$1 | while read -r file; do rsync -avz ~/repos/\$1 adech@$A1006:~/repos/; done\"; }; _start_sync"
 # launch_sync_session ~/repos/NoPoSplat adech@$A1005:~/repos/NoPoSplat
