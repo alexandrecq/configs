@@ -2,7 +2,7 @@
 	name = alexandrecq
 	email = adech@dolby.com
 [core]
-	editor = nvim
+	editor = vim
 	excludesfile = ~/.gitignore_global
 
 [alias]

@@ -17,10 +17,8 @@ alias dfh='df -h -x"squashfs"'
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
-# # TODO test --apple-use-keychain (to enable after restart)
 # alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
 alias vi='nvim'
-alias nv='nvim'
 alias kssh='kitten ssh'
 
 # Remote aliases/functions
@@ -75,14 +73,21 @@ function lib_installed() {
 function check() {
     lib_installed $1 && echo "$1 is installed" || echo "ERROR: $1 is NOT installed";
 }
+# kill processes of open files in a directory (to avoid 'device or resource busy' nfs error)
+function killopen() {
+    find "$1" -mindepth 1 -maxdepth 1 -print0 | while IFS= read -r -d '' file; do
+        echo "$file"
+        lsof -t "$file" 2>/dev/null | xargs -r kill
+    done
+}
  
 ## Ubuntu aliases
 # alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
 # alias umntgdrive='fusermount -u ~/googledrive'
 # alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
-alias juplaunch='screen jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
+alias juplaunch='screen -dmS jup jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
 function launch_tensorboard(){
-    screen tensorboard --host localhost --port 7008 --logdir="$1"
+    screen -dmS tb_screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
 
 
