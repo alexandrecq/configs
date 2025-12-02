@@ -1,0 +1,3 @@
+[submodule ".configs/.config/kitty/kitty-smart-tab"]
+	path = .configs/.config/kitty/kitty-smart-tab
+	url = https://github.com/yurikhan/kitty-smart-tab
