@@ -14,7 +14,7 @@ __pycache__/
 .pdfbox.cache
 .private_vars
 .pylint-gui-history
-.python-history
+.python_history
 .sudo_as_admin_successful
 .viminfo
 .vim_mru_files
@@ -27,6 +27,7 @@ __pycache__/
 .conda/
 .compiz/
 .config/
+.docker/
 .emacs.d/
 .fontconfig/
 .gconf/
@@ -34,17 +35,19 @@ __pycache__/
 .gimp-*/
 .gnome/
 .gnupg/
+.googleapi/
 .gradle/
 .ipython/
 .java/
 .keras/
 .local/
+.matplotlib/
+.mono/
 .mplayer/
 .mozilla/
 .nv/
 .oracle_jre_usage/
 .parallel/
-.pyembree/
 .pylint.d/
 .python-history/
 .pki/
@@ -62,10 +65,18 @@ examples.desktop
 
 # Other home directories
 NVIDIA*/
+Applications/
 anaconda3/
+miniconda3/
 Downloads/
 Documents/
+Desktop/
+Library/
+Movies/
+Music/
+Personal/
 Pictures/
+Public/
 repos/
 Software/
 Screenshots/
