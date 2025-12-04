@@ -21,41 +21,6 @@ alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 alias vi='nvim'
 alias kssh='kitten ssh'
 
-# Remote aliases/functions
-alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
-sshtunnel() {
-    # syntax: sshtunnel 6 7009 name
-    local server_idx="$1"
-    local port="${2:-7007}"
-    local session_name="$3"  # Optional: user-defined session name
-
-    # Extract hostname from the variable name
-    local var_name="A100$server_idx"
-    eval host_name=\$$var_name
-
-    if [[ -z "$host_name" ]]; then
-        echo "Error: Unknown host variable A100$server_idx"
-        return 1
-    fi
-
-    # If session name not provided, default to sshtunnel-<port>-<host>
-    if [[ -z "$session_name" ]]; then
-        session_name="sshtunnel-${local_port}-${host_name}"
-    fi
-
-    local full_cmd="autossh -M 0 \
-    -o \"ServerAliveInterval 30\" \
-    -o \"ServerAliveCountMax 3\" \
-    -L ${port}:localhost:${port} \
-    adech@${host_name}"
-
-    echo "Launching screen session: $session_name"
-    screen -dmS "$session_name" bash -c "$full_cmd"
-}
-# tensorboard on A100-6
-alias sshtunnel_tensorboard='sshtunnel 6 7008 tensorboard'
-# jupyterlab on A100-6
-alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
 
 function mkdircd(){
     mkdir -p $1
@@ -115,6 +80,46 @@ sync_repo() {
     echo "Invalid direction. Use 'l2r' or 'r2l'."
   fi
 }
+
+
+
+### A100 specific aliases ###
+
+# Remote aliases/functions
+alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
+sshtunnel() {
+    # syntax: sshtunnel 6 7009 name
+    local server_idx="$1"
+    local port="${2:-7007}"
+    local session_name="$3"  # Optional: user-defined session name
+
+    # Extract hostname from the variable name
+    local var_name="A100$server_idx"
+    eval host_name=\$$var_name
+
+    if [[ -z "$host_name" ]]; then
+        echo "Error: Unknown host variable A100$server_idx"
+        return 1
+    fi
+
+    # If session name not provided, default to sshtunnel-<port>-<host>
+    if [[ -z "$session_name" ]]; then
+        session_name="sshtunnel-${local_port}-${host_name}"
+    fi
+
+    local full_cmd="autossh -M 0 \
+    -o \"ServerAliveInterval 30\" \
+    -o \"ServerAliveCountMax 3\" \
+    -L ${port}:localhost:${port} \
+    adech@${host_name}"
+
+    echo "Launching screen session: $session_name"
+    screen -dmS "$session_name" bash -c "$full_cmd"
+}
+# tensorboard on A100-6
+alias sshtunnel_tensorboard='sshtunnel 6 7008 tensorboard'
+# jupyterlab on A100-6
+alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
 
 # alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
 sync_outputs() {

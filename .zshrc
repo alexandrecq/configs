@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -122,6 +122,13 @@ setopt nocorrectall
 unsetopt autopushd  # set in lib/directories.zsh
 # unset LESS  # disable git commands piped to less...
 LESS=-RFX  # ...or keep it but configure it
+
+# bind ^U to delete backward, not kill-whole-line
+bindkey '^U' backward-kill-line
+
+# attempting to disable pushd to ~ by default, not working
+unsetopt PUSHD_TO_HOME
+unsetopt AUTO_PUSHD
 
 # don't remove space before ' \t\n;&|'
 ZLE_REMOVE_SUFFIX_CHARS=""

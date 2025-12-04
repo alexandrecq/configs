@@ -1,0 +1,28 @@
+New MacOS setup - 2025
+
+TERMINAL
+loosely following this with kitty instead of iterm2:
+https://www.josean.com/posts/terminal-setup
+
+Install Homebrew
+Install kitty
+	~/.config/kitty included in ~/.configs repo
+Clone ~/.configs repo
+	clone kitty-smart-tab submodule
+Install oh-my-zsh & p10k
+	install optional plugins by cloning, not with brew:
+		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+brew install:
+	ack, tldr, tree
+	(check install in /usr/local/bin)
+
+NVIM
+Install neovim via brew or MacPorts
+Clone ~/.config/nvim kickstart repo (custom branch)
+If pyright fails to install, install node.js
+
+
+IMPORT STRUCTURE
+bash_profile > bashrc > (env_vars, private_vars, bash_aliases)
+zshrc > (env_vars, private_vars, bash_aliases)
