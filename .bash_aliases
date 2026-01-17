@@ -130,8 +130,51 @@ sync_outputs() {
 }
 alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" adech@$A1005:/home/adech/repos/gsplat/results/ ~/dolby/data/gsplat_results/'
 
-# # dynamic version, custom paths - launch as `launch_sync_session /path/to/source user@remote_host:/path/to/destination`
-# alias launch_sync_session="function _start_sync() { screen -dmS sync_session_$1 bash -c \"fswatch -r \$1 | while read -r file; do rsync -avz \$1/ \$2; done\"; }; _start_sync"
-# dynamic version, ~/repos only - launch as `launch_sync_session repo_name`
-alias launch_sync_session="function _start_sync() { screen -dmS sync_session_\$1 bash -c \"fswatch -r ~/repos/\$1 | while read -r file; do rsync -avz ~/repos/\$1 adech@$A1006:~/repos/; done\"; }; _start_sync"
-# launch_sync_session ~/repos/NoPoSplat adech@$A1005:~/repos/NoPoSplat
+
+
+launch_sync_session() {
+    local input_path="$1"
+    local remote="$2"
+
+    if [[ -z "$input_path" || -z "$remote" ]]; then
+        echo "Usage: launch_sync_session <path_to_repo> <remote_host>"
+        return 1
+    fi
+
+    # Expand ~ if present (shell must do this unquoted)
+    # Use 'eval' safely here only to expand paths.
+    local repo_path
+    repo_path=$(eval echo "$input_path")
+
+    # Now repo_path is expanded (~/foo -> /Users/alex/foo)
+    if [[ "$repo_path" != /* ]]; then
+        echo "Error: '$input_path' did not resolve to an absolute path"
+        return 1
+    fi
+
+    # Remove trailing slash then extract repo name
+    local trimmed="${repo_path%/}"
+    local repo_name="${trimmed##*/}"
+
+    local src="$repo_path"
+    local dest="${remote}:/workspace/"
+    local session_name="sync_session_${repo_name}"
+
+    if [[ ! -d "$src" ]]; then
+        echo "Error: directory '$src' does not exist"
+        return 1
+    fi
+
+    echo "Starting screen session '$session_name'"
+    echo "Watching: $src"
+    echo "Syncing to: $dest"
+
+    screen -dmS "$session_name" bash -lc "
+        fswatch -r \"$src\" | while read -r file; do
+            rsync -avz --no-owner --no-group --no-perms \
+                  --exclude='__pycache__/' \
+                  \"$src\" \"$dest\"
+        done
+    "
+}
+

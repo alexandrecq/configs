@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Custom config starts here
+######## CUSTOM CONFIG STARTS HERE ########
 
 # Disable autocorrect on command args
 setopt nocorrectall
@@ -126,16 +126,17 @@ LESS=-RFX  # ...or keep it but configure it
 # bind ^U to delete backward, not kill-whole-line
 bindkey '^U' backward-kill-line
 
-# attempting to disable pushd to ~ by default, not working
-unsetopt PUSHD_TO_HOME
-unsetopt AUTO_PUSHD
+# # attempting to disable pushd to ~ by default, not working
+# unsetopt PUSHD_TO_HOME
+# unsetopt AUTO_PUSHD
 
 # don't remove space before ' \t\n;&|'
 ZLE_REMOVE_SUFFIX_CHARS=""
 
 # set autosuggest fg color so it's visible against bg
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-# End custom config
+
+######## END CUSTOM CONFIG ########
 
 
 if [ -f ~/.env_vars ]; then
@@ -151,14 +152,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/local/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
+        export PATH="/usr/local/Caskroom/miniforge/base/bin:$PATH"
     fi
 fi
 unset __conda_setup

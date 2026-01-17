@@ -603,8 +603,8 @@ c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 c.InteractiveShellApp.exec_lines = [
     'from pathlib import Path',
     'import numpy as np',
-    'import matplotlib.pyplot as plt',
-    'import imageio, os, json, pickle, glob',
-    'import torch',
+#     'import matplotlib.pyplot as plt',
+#     'import imageio, os, json, pickle, glob',
+#     'import torch',
 ]
 # c.readline_parse_and_bind("set expand-tilde off")

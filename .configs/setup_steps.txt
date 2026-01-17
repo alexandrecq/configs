@@ -20,7 +20,8 @@ brew install:
 NVIM
 Install neovim via brew or MacPorts
 Clone ~/.config/nvim kickstart repo (custom branch)
-If pyright fails to install, install node.js
+If pyright fails to install, install node.js (via brew or nvm)
+Install ripgrep (telescope dependency) - may use this instead of ack?
 
 
 IMPORT STRUCTURE
