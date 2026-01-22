@@ -55,7 +55,6 @@ function launch_tensorboard(){
     screen -dmS tb_screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
 
-
 # Function to synchronize repos between two machines
 sync_repo() {
   local direction=$(echo "$1" | xargs)  # Trims whitespace
@@ -81,47 +80,38 @@ sync_repo() {
   fi
 }
 
-
-
-### A100 specific aliases ###
-
-# Remote aliases/functions
-alias sshix='ssh -YC $GREEN_USERNAME@$GREEN_IP'
 sshtunnel() {
-    # syntax: sshtunnel 6 7009 name
-    local server_idx="$1"
+    # syntax:
+    #   sshtunnel <ssh_host> [port] [session_name]
+    #
+    # example:
+    #   sshtunnel runpod-blip-rtx2000-tcp 7009 blip
+
+    local ssh_host="$1"
     local port="${2:-7007}"
-    local session_name="$3"  # Optional: user-defined session name
+    local session_name="$3"
 
-    # Extract hostname from the variable name
-    local var_name="A100$server_idx"
-    eval host_name=\$$var_name
-
-    if [[ -z "$host_name" ]]; then
-        echo "Error: Unknown host variable A100$server_idx"
+    if [[ -z "$ssh_host" ]]; then
+        echo "Usage: sshtunnel <ssh_host> [port] [session_name]"
         return 1
     fi
 
-    # If session name not provided, default to sshtunnel-<port>-<host>
+    # Default session name
     if [[ -z "$session_name" ]]; then
-        session_name="sshtunnel-${local_port}-${host_name}"
+        session_name="sshtunnel-${ssh_host}-${port}"
     fi
 
     local full_cmd="autossh -M 0 \
-    -o \"ServerAliveInterval 30\" \
-    -o \"ServerAliveCountMax 3\" \
-    -L ${port}:localhost:${port} \
-    adech@${host_name}"
+        -o ServerAliveInterval=30 \
+        -o ServerAliveCountMax=3 \
+        -L ${port}:localhost:${port} \
+        ${ssh_host}"
 
     echo "Launching screen session: $session_name"
     screen -dmS "$session_name" bash -c "$full_cmd"
 }
-# tensorboard on A100-6
-alias sshtunnel_tensorboard='sshtunnel 6 7008 tensorboard'
-# jupyterlab on A100-6
-alias sshtunnel_jupyter='sshtunnel 6 8080 jupyter'
 
-# alias sync_outputs='rsync -avz --include="*jpg" --include="*/" --exclude="*" adech@$A1001:///home/adech/repos/dolby-nerfstudio/outputs ~/dolby/data/nerfstudio_outputs'
+
 sync_outputs() {
   local extension="${1:-jpg}"  # Use provided extension or default to jpg
   local source_path="adech@$A1001:/home/adech/repos/dolby-nerfstudio/outputs/"
@@ -129,7 +119,6 @@ sync_outputs() {
   rsync -avz --include="*/" --include="*.${extension}" --exclude="*" "${source_path}" "${dest_path}"
 }
 alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" adech@$A1005:/home/adech/repos/gsplat/results/ ~/dolby/data/gsplat_results/'
-
 
 
 launch_sync_session() {
@@ -146,7 +135,7 @@ launch_sync_session() {
     local repo_path
     repo_path=$(eval echo "$input_path")
 
-    # Now repo_path is expanded (~/foo -> /Users/alex/foo)
+    # Now repo_path is expanded
     if [[ "$repo_path" != /* ]]; then
         echo "Error: '$input_path' did not resolve to an absolute path"
         return 1
