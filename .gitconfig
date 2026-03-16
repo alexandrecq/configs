@@ -1,8 +1,8 @@
 [user]
 	name = alexandrecq
-	email = adech@dolby.com
+	email = a.dechaumontquitry@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
 
 [alias]

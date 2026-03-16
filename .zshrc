@@ -1,9 +1,12 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=on
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,8 +21,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -119,16 +120,21 @@ source $ZSH/oh-my-zsh.sh
 setopt nocorrectall
 # setopt correct
 
-unsetopt autopushd  # set in lib/directories.zsh
+unsetopt autopushd    # set in lib/directories.zsh
+unsetopt pushd_to_home  # no effect alone, but the function below enforces bash behavior
+# error instead of pushing ~ when stack is empty (bash behavior)
+function pushd() {
+    if [[ $# -eq 0 && ${#dirstack[@]} -eq 0 ]]; then
+        echo "pushd: no other directory" >&2
+        return 1
+    fi
+    builtin pushd "$@"
+}
 # unset LESS  # disable git commands piped to less...
 LESS=-RFX  # ...or keep it but configure it
 
 # bind ^U to delete backward, not kill-whole-line
 bindkey '^U' backward-kill-line
-
-# # attempting to disable pushd to ~ by default, not working
-# unsetopt PUSHD_TO_HOME
-# unsetopt AUTO_PUSHD
 
 # don't remove space before ' \t\n;&|'
 ZLE_REMOVE_SUFFIX_CHARS=""
