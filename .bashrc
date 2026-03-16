@@ -106,6 +106,9 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.bashrc.local ]; then
+    . ~/.bashrc.local
+fi
 # if [ -f ~/.git-completion.bash ]; then
 #     . ~/.git-completion.bash
 # fi
@@ -124,8 +127,6 @@ fi
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-
-
 # Setting for the UTF-8 terminal support (fix for Perl warning in Ack)
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -139,8 +140,6 @@ kernel_name=$(uname -s)
 if [[ $kernel_name = Darwin ]]; then
     source ~/.macos_profile.sh
 fi
-
-# . $HOME/torch/install/bin/torch-activate
 
 # added by NVM installer (Node Version Manager for node.js)
 export NVM_DIR="$HOME/.nvm"

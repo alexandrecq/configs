@@ -142,6 +142,20 @@ ZLE_REMOVE_SUFFIX_CHARS=""
 # set autosuggest fg color so it's visible against bg
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Prefer snap-installed tools like Neovim over distro packages when both exist.
+typeset -U path PATH
+path=(/snap/bin $path)
+export PATH
+
+# Use Neovim anywhere terminal tools open an external editor. (e.g. ^G in codex CLI)
+export EDITOR="nvim"
+export VISUAL="nvim"
+export GIT_EDITOR="nvim"
+
 ######## END CUSTOM CONFIG ########
 
 
@@ -154,26 +168,9 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/Caskroom/miniforge/base/bin:$PATH"
-    fi
+if [ -f ~/.zshrc.local ]; then
+    . ~/.bashrc.local
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
