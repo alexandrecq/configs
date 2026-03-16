@@ -1,5 +1,4 @@
 ## aliases
-alias l='l -CF'
 alias ll='ls -lhF'
 alias lr='ls -ltrFh'
 alias la='ls -A'
@@ -13,7 +12,13 @@ alias h='history'
 alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
-alias dfh='df -h -x"squashfs"'
+function dfh() {
+    if [[ "$(uname)" == "Darwin" ]]; then
+        df -h
+    else
+        df -h -x squashfs
+    fi
+}
 alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
@@ -46,29 +51,26 @@ function killopen() {
     done
 }
  
-## Ubuntu aliases
-# alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
-# alias umntgdrive='fusermount -u ~/googledrive'
-# alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
+
 alias juplaunch='screen -dmS jup jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
 function launch_tensorboard(){
     screen -dmS tb_screen tensorboard --host localhost --port 7008 --logdir="$1"
 }
 
 # Function to synchronize repos between two machines
+# Usage: sync_repo <l2r|r2l> <repo_name> <remote_path> [local_path]
+# Example: sync_repo l2r my_repo user@host:/home/user/repos/
 sync_repo() {
-  local direction=$(echo "$1" | xargs)  # Trims whitespace
-  local repo_name=$(echo "$2" | xargs)  # Trims whitespace
+  local direction="$1"
+  local repo_name="$2"
+  local remote_path="$3"
+  local local_path="${4:-$HOME/repos/}"
 
-  # Define the local and remote paths
-  local local_path="$HOME/repos/"
-  local remote_path="adech@$MB_LOCAL:/Users/adech/repos/"
+  if [[ -z "$direction" || -z "$repo_name" || -z "$remote_path" ]]; then
+    echo "Usage: sync_repo <l2r|r2l> <repo_name> <remote_path> [local_path]"
+    return 1
+  fi
 
-  # Debug: Print the paths to verify
-  echo "Local path: '$local_path'"
-  echo "Remote path: '$remote_path'"
-
-  # Check the direction and perform the appropriate rsync command
   if [[ "$direction" == "l2r" ]]; then
     echo "Syncing from local to remote..."
     rsync -avz --delete "$local_path/$repo_name" "$remote_path"
@@ -77,6 +79,7 @@ sync_repo() {
     rsync -avz --delete "$remote_path/$repo_name" "$local_path"
   else
     echo "Invalid direction. Use 'l2r' or 'r2l'."
+    return 1
   fi
 }
 
@@ -85,7 +88,7 @@ sshtunnel() {
     #   sshtunnel <ssh_host> [port] [session_name]
     #
     # example:
-    #   sshtunnel runpod-blip-rtx2000-tcp 7009 blip
+    #   sshtunnel runpod 8080 jupyter
 
     local ssh_host="$1"
     local port="${2:-7007}"
@@ -110,16 +113,6 @@ sshtunnel() {
     echo "Launching screen session: $session_name"
     screen -dmS "$session_name" bash -c "$full_cmd"
 }
-
-
-sync_outputs() {
-  local extension="${1:-jpg}"  # Use provided extension or default to jpg
-  local source_path="adech@$A1001:/home/adech/repos/dolby-nerfstudio/outputs/"
-  local dest_path="$HOME/dolby/data/nerfstudio_outputs/"
-  rsync -avz --include="*/" --include="*.${extension}" --exclude="*" "${source_path}" "${dest_path}"
-}
-alias sync_gsplat_results='rsync -arv --delete --include="*/" --exclude="*.pt" adech@$A1005:/home/adech/repos/gsplat/results/ ~/dolby/data/gsplat_results/'
-
 
 launch_sync_session() {
     local input_path="$1"
@@ -167,3 +160,7 @@ launch_sync_session() {
     "
 }
 
+## Ubuntu aliases
+# alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
+# alias umntgdrive='fusermount -u ~/googledrive'
+# alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
