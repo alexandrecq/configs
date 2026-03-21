@@ -52,6 +52,7 @@ __pycache__/
 .mplayer/
 .mozilla/
 .npm/
+.nvm/
 .nv/
 .oh-my-zsh/
 .oracle_jre_usage/

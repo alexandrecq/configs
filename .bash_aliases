@@ -164,3 +164,15 @@ launch_sync_session() {
 # alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
 # alias umntgdrive='fusermount -u ~/googledrive'
 # alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
+
+bt_card() {
+  pactl list cards short | awk '/bluez_card/ {print $2; exit}'
+}
+
+bt_mic() {
+  pactl set-card-profile "$(bt_card)" headset-head-unit
+}
+
+bt_hifi() {
+  pactl set-card-profile "$(bt_card)" a2dp-sink
+}
