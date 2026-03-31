@@ -163,7 +163,6 @@ launch_sync_session() {
 ## Ubuntu aliases
 # alias mntgdrive='google-drive-ocamlfuse ~/googledrive-drive-ocamlfuse ~/googledrive'
 # alias umntgdrive='fusermount -u ~/googledrive'
-# alias mount_btc='sudo mount -t cifs -o username=dolbyix //bills-trash-can.dsv.eng.dolby.net/ix_data_60 /mnt/bills-trash-can/ix_data_60'
 
 bt_card() {
   pactl list cards short | awk '/bluez_card/ {print $2; exit}'
