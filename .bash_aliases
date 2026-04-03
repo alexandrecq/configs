@@ -175,3 +175,28 @@ bt_mic() {
 bt_hifi() {
   pactl set-card-profile "$(bt_card)" a2dp-sink
 }
+
+## G aliases
+
+# Function to check gcert status and run gcert if expiry is within 1 hour
+gcert_if_needed() {
+  if gcertstatus -nocheck_ssh -check_remaining=1h > /dev/null 2>&1; then
+    echo "gcert is valid for at least the next hour."
+  else
+    echo "gcert is expired or expires soon. Running gcert..."
+    gcert
+  fi
+}
+
+# Connect to a host defined by $DEFAULT_SSH_HOST, ensure gcert on the remote,
+# and start/attach to tmx2 session 'work'.
+# Usage: ssh_work
+ssh_work() {
+  # The :? will cause the command to fail and print an error if DEFAULT_SSH_HOST is unset or null.
+  local host="${CLOUDTOP_HOST:?Error: CLOUDTOP_HOST environment variable is not set or empty.}"
+
+  # The command to run on the remote machine
+  local remote_cmd="gcertstatus -nocheck_ssh -check_remaining=1h || gcert; tmx2 new -A -s work"
+
+  ssh "${host}" -t -- /bin/zsh -c "${remote_cmd}"
+}
