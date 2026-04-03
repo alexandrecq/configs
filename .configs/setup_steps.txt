@@ -6,16 +6,17 @@ https://www.josean.com/posts/terminal-setup
 
 Install Homebrew
 Install kitty
-	~/.config/kitty included in ~/.configs repo
+    ~/.config/kitty included in ~/.configs repo
 Clone ~/.configs repo
-	clone kitty-smart-tab submodule
+    clone kitty-smart-tab submodule
 Install oh-my-zsh & p10k
-	install optional plugins by cloning, not with brew:
-		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    install optional plugins by cloning, not with brew:
+        git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 brew install:
-	ack, tldr, tree
-	(check install in /usr/local/bin)
+    ack, tldr, tree
+    (check install in /usr/local/bin)
 
 NVIM
 Install neovim via brew or MacPorts
