@@ -19,12 +19,12 @@ function dfh() {
         df -h -x squashfs
     fi
 }
-alias matlab='matlab -nodesktop -nosplash'
 # alias top='top -ocpu -O+rsize -s 5 -n 50'
 alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
 # alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
 alias vi='nvim'
 alias kssh='kitten ssh'
+alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 
 
 function mkdircd(){
