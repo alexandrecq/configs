@@ -160,7 +160,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 if [ -f ~/.zshrc.local ]; then
-    . ~/.bashrc.local
+    . ~/.zshrc.local
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
