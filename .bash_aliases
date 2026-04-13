@@ -200,3 +200,8 @@ ssh_work() {
 
   ssh "${host}" -t -- /bin/zsh -c "${remote_cmd}"
 }
+
+# If new-session fails, maybe session already exists, so attach it
+alias start_colab_kernel='tmux new-session -d -s colab_kernel "blaze run -c opt //experimental/users/alexandrecq/colab:embedding_similarity" || tmux attach-session -t colab_kernel'
+
+## End G aliases
