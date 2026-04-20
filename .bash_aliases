@@ -201,6 +201,19 @@ ssh_work() {
   ssh "${host}" -t -- /bin/zsh -c "${remote_cmd}"
 }
 
+csv_to_textproto() {
+  if [ -z "$1" ]; then
+    echo "Usage: csv_to_textproto <input_file.csv>"
+    return 1
+  fi
+
+  local input_file="$1"
+  local output_file="${input_file%.csv}.textproto"
+
+  sed '1d; s/^"//; s/"$//; s/""/"/g' "${input_file}" > "${output_file}"
+  echo "Converted ${input_file} to ${output_file}"
+}
+
 # If new-session fails, maybe session already exists, so attach it
 alias start_colab_kernel='tmux new-session -d -s colab_kernel "blaze run -c opt //experimental/users/alexandrecq/colab:embedding_similarity" || tmux attach-session -t colab_kernel'
 
