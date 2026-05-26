@@ -216,5 +216,6 @@ csv_to_textproto() {
 
 # If new-session fails, maybe session already exists, so attach it
 alias start_colab_kernel='tmux new-session -d -s colab_kernel "blaze run -c opt //experimental/users/alexandrecq/colab:embedding_similarity" || tmux attach-session -t colab_kernel'
+alias jetski='/google/bin/releases/jetski-devs/tools/cli'
 
 ## End G aliases
