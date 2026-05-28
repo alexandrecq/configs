@@ -12,6 +12,14 @@ alias h='history'
 alias sagi='sudo apt-get install'
 alias sagu='sudo apt-get update && sudo apt-get upgrade'
 alias wnvidia-smi='watch -d -n 0.5 nvidia-smi'
+# alias top='top -ocpu -O+rsize -s 5 -n 50'
+alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+# alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+alias vi='nvim'
+alias kssh='kitten ssh'
+
+
+## functions
 function dfh() {
     if [[ "$(uname)" == "Darwin" ]]; then
         df -h
@@ -19,14 +27,6 @@ function dfh() {
         df -h -x squashfs
     fi
 }
-# alias top='top -ocpu -O+rsize -s 5 -n 50'
-alias addkey='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
-# alias addkey='eval `ssh-agent -s` && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
-alias vi='nvim'
-alias kssh='kitten ssh'
-alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
-
-
 function mkdircd(){
     mkdir -p $1
     cd $1
@@ -53,8 +53,83 @@ function killopen() {
  
 
 alias juplaunch='screen -dmS jup jupyter lab --no-browser --notebook-dir ~/software/notebooks_acq/ --port 8080'
+
+_get_tensorboard_cmd() {
+  # Try to find google3 root using g4
+  local g3_root
+  g3_root=$(p4 g4d 2>/dev/null || echo "")
+  
+  # If g4 fails, traverse up to find google3 directory
+  if [[ -z "$g3_root" ]]; then
+    local curr="$PWD"
+    while [[ "$curr" != "/" ]]; do
+      if [[ -d "$curr/google3" ]]; then
+        g3_root="$curr/google3"
+        break
+      elif [[ "${curr##*/}" == "google3" ]]; then
+        g3_root="$curr"
+        break
+      fi
+      curr="$(dirname "$curr")"
+    done
+  fi
+
+  if [[ -n "$g3_root" && -x "$g3_root/learning/brain/tensorboard/tensorboard.sh" ]]; then
+    echo "$g3_root/learning/brain/tensorboard/tensorboard.sh"
+  elif which tensorboard >/dev/null 2>&1; then
+    echo "tensorboard"
+  else
+    echo ""
+  fi
+}
+
 function launch_tensorboard(){
-    screen -dmS tb_screen tensorboard --host localhost --port 7008 --logdir="$1"
+  local logdir="$1"
+  local port="${2:-7008}"
+
+  if [[ -z "$logdir" ]]; then
+    echo "Error: Please specify a log directory."
+    echo "Usage: launch_tensorboard <logdir> [port]"
+    return 1
+  fi
+
+  if [[ ! -d "$logdir" ]]; then
+    echo "Error: Directory '$logdir' does not exist."
+    return 1
+  fi
+
+  local tb_cmd
+  tb_cmd=$(_get_tensorboard_cmd)
+  if [[ -z "$tb_cmd" ]]; then
+    echo "Error: Could not find 'tensorboard.sh' in google3 or 'tensorboard' in PATH."
+    return 1
+  fi
+
+  echo "Using TensorBoard command: $tb_cmd"
+  echo "Launching TensorBoard on port $port..."
+
+  local err_log="/tmp/tb_launch_err_${port}.log"
+  rm -f "$err_log"
+
+  # Run inside screen, redirecting stderr to a temp log file
+  screen -dmS "tb_screen_${port}" bash -c "$tb_cmd --host localhost --port $port --logdir=\"$logdir\" 2> \"$err_log\""
+
+  # Wait a moment and check if screen is still alive
+  sleep 1.5
+  if screen -list | grep -q "tb_screen_${port}"; then
+    echo "TensorBoard launched successfully in screen session 'tb_screen_${port}'!"
+    echo "Access it via: http://localhost:${port}"
+  else
+    echo "Error: TensorBoard failed to start on port $port!"
+    if [[ -f "$err_log" && -s "$err_log" ]]; then
+      echo "--- Startup Error Log ---"
+      cat "$err_log"
+      echo "-------------------------"
+    else
+      echo "No error log captured. Check if port $port is already in use."
+    fi
+    return 1
+  fi
 }
 
 # Function to synchronize repos between two machines
