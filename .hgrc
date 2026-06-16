@@ -1,6 +1,8 @@
 [alias]
 st = status
 df = diff
+# diff [n]ame [o]nly
+dfno = status --change .
 
 [google]
 presubmit.default-rev=.
