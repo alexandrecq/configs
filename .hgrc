@@ -1,6 +1,7 @@
 [alias]
 st = status
 df = diff
+ci = commit
 # diff [n]ame [o]nly
 dfno = status --change .
 
