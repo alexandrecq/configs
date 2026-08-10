@@ -8,3 +8,6 @@ dfno = status --change .
 [google]
 presubmit.default-rev=.
 prevent-push-dirty=false
+
+[fig]
+default_cl_tags = Format: Markdown
