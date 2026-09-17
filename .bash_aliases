@@ -266,12 +266,13 @@ gcert_if_needed() {
 # Connect to a host defined by $DEFAULT_SSH_HOST, ensure gcert on the remote,
 # and start/attach to tmx2 session 'work'.
 # Usage: ssh_work
+alias gcert_cloudtop="gcert --lifetime=168h --nocorpssh --noprodssh && gcert --reuse_sso_cookie --noloas2"
 ssh_work() {
   # The :? will cause the command to fail and print an error if DEFAULT_SSH_HOST is unset or null.
   local host="${CLOUDTOP_HOST:?Error: CLOUDTOP_HOST environment variable is not set or empty.}"
 
   # The command to run on the remote machine
-  local remote_cmd="gcertstatus -nocheck_ssh -check_remaining=1h || gcert --lifetime=168h --nocorpssh --noprodssh && gcert --reuse_sso_cookie --noloas2; tmx2 new -A -s work"
+  local remote_cmd="gcertstatus -nocheck_ssh -check_remaining=1h || gcert_cloutop; tmx2 new -A -s work"
 
   ssh "${host}" -t -- /bin/zsh -c "${remote_cmd}"
 }
