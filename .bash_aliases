@@ -272,7 +272,7 @@ ssh_work() {
   local host="${CLOUDTOP_HOST:?Error: CLOUDTOP_HOST environment variable is not set or empty.}"
 
   # The command to run on the remote machine
-  local remote_cmd="gcertstatus -nocheck_ssh -check_remaining=1h || gcert_cloutop; tmx2 new -A -s work"
+  local remote_cmd="gcertstatus -nocheck_ssh -check_remaining=1h || gcert_cloudtop; tmx2 new -A -s work"
 
   ssh "${host}" -t -- /bin/zsh -c "${remote_cmd}"
 }

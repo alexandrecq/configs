@@ -23,7 +23,7 @@ __pycache__/
 .vim_mru_files
 .wget-hsts
 .xsession-errors*
-.Xauthoriy
+.Xauthority
 .zshrc.local
 
 # Hidden directories

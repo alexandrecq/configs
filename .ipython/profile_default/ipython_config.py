@@ -599,8 +599,8 @@
 #c.StoreMagics.autorestore = False
 
 c.InteractiveShellApp.extensions = ['autoreload']
-c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 c.InteractiveShellApp.exec_lines = [
+    '%autoreload 2',
     'from pathlib import Path',
     'import numpy as np',
 #     'import matplotlib.pyplot as plt',

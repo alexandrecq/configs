@@ -36,5 +36,5 @@ set colored-stats on
 "\eOA": history-search-backward
 "\eOB": history-search-forward
 
-C-P: history-search-backward
-C-N: history-search-forward
+"\C-p": history-search-backward
+"\C-n": history-search-forward
