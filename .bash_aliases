@@ -284,5 +284,6 @@ alias current_conv_id='basename $(ls -td ~/.gemini/jetski/brain/*/ | head -n 1)'
 alias current_conv_dir='ls -td ~/.gemini/jetski/brain/*/ | head -n 1'
 alias bcid_clear='/google/data/ro/teams/bcid/bin/bcid_clear'
 alias xmanager='/google/bin/releases/xmanager/cli/xmanager.par'
+alias watch_quota='/google/src/head/depot/google3/prototypes/projects/watch_quota/watch_quota'
 
 ## End G aliases
